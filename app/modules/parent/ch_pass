@@ -1,0 +1,69 @@
+<section class="main-content">
+
+    <!-- content wrapper -->
+    <div class="content-wrap">
+
+        <!-- inner content wrapper -->
+        <div class="wrapper">
+            <div class=" col-lg-6 col-lg-offset-3">
+                <section class="panel panel-default">
+                    <header class="panel-heading">LINK A STUDENT TO THIS ACCOUNT</header>
+
+                    <div class="panel-body">
+                        <?php
+                        if (isset($_GET['success'])) {
+                            switch ($_GET['success']) {
+                                case 1:
+                                    echo "<p style=\"color: #008000;\">Successfully linked, go to homepage.</p>";
+                                    break;
+
+                                case 2:
+                                    echo "<p style=\"color: red;\">Registration number not found!</p>";
+                                    break;
+
+                                case 3:
+                                    echo "<p style=\"color: blue;\">Found match, but with different birthdays.</p>";
+                                    break;
+
+                                default:
+                                    echo "<p>There seems to be a problem.</p>";
+                                    break;
+                            }
+                        };
+                        ?>
+                        <form role="form" class="parsley-form" action="ch_pass.php" method="get"
+                              data-parsley-validate>
+                            <div class="form-group">
+                                <label for="current_password">Current Password</label>
+                                <input name="current_password" class="form-control mb25" placeholder="Current Password" type="password"
+                                       data-parsley-required="true" data-parsley-trigger="change"
+                                       data-parsley-type="digits" data-parsley-length="[6, 8]"/>
+
+                                <label for="new_password">New Password</label>
+                                <input name="new_password" class="form-control" placeholder="Type in new password" type="password"
+                                       data-parsley-required="true" data-parsley-trigger="change"
+                                       data-parsley-type="digits" data-parsley-length="[6, 8]"/>
+
+                                <label for="r_new_password">New Password</label>
+                                <input name="r_new_password" class="form-control" placeholder="Type in new password again" type="password"
+                                       data-parsley-required="true" data-parsley-trigger="change"
+                                       data-parsley-type="digits" data-parsley-length="[6, 8]"/>
+                            </div>
+
+                            <div class="col-lg-6 no-p">
+                                <button class="form-control btn btn-primary btn-parsley">SUBMIT</button>
+                            </div>
+                            <div class="col-lg-6 no-p"><a class="form-control btn btn-warning">WHAT IS THIS?</a></div>
+
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <!-- /inner content wrapper -->
+    </div>
+    <!-- /content wrapper -->
+    <?php include("includes/parent/footer.inc"); ?>
+    <a class="exit-offscreen"></a>
+</section>
+

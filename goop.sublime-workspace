@@ -1,0 +1,1808 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"att",
+				"attr	.attr() - single"
+			],
+			[
+				"va",
+				"valuePost($param)	mixed"
+			],
+			[
+				"term",
+				"$term_id〔variable〕"
+			],
+			[
+				"is_",
+				"is_array〔function〕"
+			],
+			[
+				"$subje",
+				"$subjects〔variable〕"
+			],
+			[
+				"ch",
+				"$check〔variable〕"
+			],
+			[
+				"debug_",
+				"debug_print_backtrace"
+			],
+			[
+				"op",
+				"option	Tag"
+			],
+			[
+				"val",
+				"valuePost($param)	mixed"
+			],
+			[
+				"debug",
+				"debug_print_backtrace〔function〕"
+			],
+			[
+				"deb",
+				"debug_backtrace〔function〕"
+			],
+			[
+				"$teacher",
+				"$teachers〔variable〕"
+			],
+			[
+				"$stude",
+				"$student〔variable〕"
+			],
+			[
+				"panel",
+				"div.panel"
+			],
+			[
+				"$in",
+				"$in_class_html〔variable〕"
+			],
+			[
+				"getS",
+				"getStudentsID〔function〕"
+			],
+			[
+				"$class",
+				"$class_check〔variable〕"
+			],
+			[
+				"noti",
+				"notification"
+			],
+			[
+				"res",
+				"resize〔function〕"
+			],
+			[
+				"ver",
+				"vertical-align: 〔property〕"
+			],
+			[
+				"chat",
+				"$chat_user〔variable〕"
+			],
+			[
+				"get",
+				"getClassName〔function〕"
+			],
+			[
+				"row",
+				"$row〔variable〕"
+			],
+			[
+				"e",
+				"execObject〔function〕"
+			],
+			[
+				"c",
+				"class_id"
+			],
+			[
+				"cla",
+				"class_id〔variable〕"
+			],
+			[
+				"tr",
+				"true"
+			],
+			[
+				"fade",
+				"fadeToggle	.fadeToggle()"
+			],
+			[
+				"cha",
+				"chat_subscribers"
+			],
+			[
+				"ts",
+				"$tstamp〔variable〕"
+			],
+			[
+				"tim",
+				"$time〔variable〕"
+			],
+			[
+				"mess",
+				"$message_row〔variable〕"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"$start",
+				"$start_chat_html〔variable〕"
+			],
+			[
+				"la",
+				"$lastping〔variable〕"
+			],
+			[
+				"$su",
+				"$sub_profile_html〔variable〕"
+			],
+			[
+				"$studne",
+				"$students〔variable〕"
+			],
+			[
+				"print",
+				"print_r〔function〕"
+			],
+			[
+				"bol",
+				"bolder"
+			],
+			[
+				"font",
+				"font-weight"
+			],
+			[
+				"bo",
+				"bolder"
+			],
+			[
+				"fon",
+				"font-weight"
+			],
+			[
+				"ma",
+				"material"
+			],
+			[
+				"studne",
+				"student_id"
+			],
+			[
+				"_s",
+				"$_SESSION〔variable〕"
+			],
+			[
+				"v",
+				"$v_code〔variable〕"
+			],
+			[
+				"co",
+				"confirmation"
+			],
+			[
+				"ge",
+				"getID〔function〕"
+			],
+			[
+				"mysqli_fet",
+				"mysqli_fetch_assoc〔function〕"
+			],
+			[
+				"ro",
+				"$row〔variable〕"
+			],
+			[
+				"se",
+				"setProfilePicture〔function〕"
+			],
+			[
+				"getP",
+				"getProfilePictureURL〔function〕"
+			],
+			[
+				"pr",
+				"profile_pic"
+			],
+			[
+				"$ob",
+				"$observer_name〔variable〕"
+			],
+			[
+				"$beh",
+				"$behaviour_row〔variable〕"
+			],
+			[
+				"o",
+				"$observer〔variable〕"
+			],
+			[
+				"getF",
+				"getFullname〔function〕"
+			],
+			[
+				"dis",
+				"display"
+			],
+			[
+				"sc",
+				"school_id"
+			],
+			[
+				"Sch",
+				"SchoolClass	SchoolClass"
+			],
+			[
+				"a",
+				"action	Attr"
+			],
+			[
+				"array_inte",
+				"array_intersect_key〔function〕"
+			],
+			[
+				"$add",
+				"$add_html〔variable〕"
+			],
+			[
+				"$del",
+				"$delete_link〔variable〕"
+			],
+			[
+				"for",
+				"foreach	foreach …"
+			],
+			[
+				"news",
+				"$news_row〔variable〕"
+			],
+			[
+				"New",
+				"Newsletter"
+			],
+			[
+				"curre",
+				"current_term"
+			],
+			[
+				"S",
+				"Session	Session"
+			],
+			[
+				"C",
+				"Connection	Connection"
+			],
+			[
+				"inse",
+				"$insert_id〔variable〕"
+			],
+			[
+				"get_",
+				"$get_chat_id〔variable〕"
+			],
+			[
+				"$ch",
+				"$ch_message〔variable〕"
+			],
+			[
+				"use",
+				"$user2〔variable〕"
+			],
+			[
+				"user",
+				"$user1〔variable〕"
+			],
+			[
+				"Ch",
+				"Chat〔class〕"
+			],
+			[
+				"$mess",
+				"$messages〔variable〕"
+			],
+			[
+				"g",
+				"getType〔function〕"
+			],
+			[
+				"ch_",
+				"$ch_user〔variable〕"
+			],
+			[
+				"array_in",
+				"array_intersect_assoc"
+			],
+			[
+				"u",
+				"$u_id〔variable〕"
+			],
+			[
+				"strto",
+				"strtoupper〔function〕"
+			],
+			[
+				"$c",
+				"$ch_user〔variable〕"
+			],
+			[
+				"cu",
+				"$current_term〔variable〕"
+			],
+			[
+				"set",
+				"setSchoolInfo〔function〕"
+			],
+			[
+				"ass",
+				"assistant_rank"
+			],
+			[
+				"curr",
+				"current_session"
+			],
+			[
+				"sch",
+				"sch_phone"
+			],
+			[
+				"ow",
+				"owner_rank"
+			],
+			[
+				"curren",
+				"current_session"
+			],
+			[
+				"scho",
+				"sch_phone"
+			],
+			[
+				"ne",
+				"news_id"
+			],
+			[
+				"activate",
+				"activate_t"
+			],
+			[
+				"printe",
+				"printContentb〔function〕"
+			],
+			[
+				"on",
+				"onclick	Attr"
+			],
+			[
+				"school",
+				"school_id"
+			],
+			[
+				"su",
+				"subject"
+			],
+			[
+				"Tool",
+				"Tools	Tools"
+			],
+			[
+				"getC",
+				"getCurrentTermID〔function〕"
+			],
+			[
+				"myslqi_f",
+				"mysqli_fetch_assoc〔function〕"
+			],
+			[
+				"mysqli_num",
+				"mysqli_num_rows〔function〕"
+			],
+			[
+				"js",
+				"json_encode"
+			],
+			[
+				"cate",
+				"categoryData"
+			],
+			[
+				"ca",
+				"categoryData"
+			],
+			[
+				"is",
+				"isArray〔function〕"
+			],
+			[
+				"eas",
+				"easyPieChart"
+			],
+			[
+				"typ",
+				"typeof〔keyword〕"
+			],
+			[
+				"session_de",
+				"session_destroy"
+			],
+			[
+				"pare",
+				"parent"
+			],
+			[
+				"prese",
+				"$present_percent〔variable〕"
+			],
+			[
+				"cou",
+				"countPresent〔function〕"
+			],
+			[
+				"mysqli_nu",
+				"mysqli_num_rows〔function〕"
+			],
+			[
+				"ece",
+				"execObject〔function〕"
+			],
+			[
+				"beh",
+				"behaviour_stat"
+			],
+			[
+				"schoo",
+				"school_id"
+			],
+			[
+				"_SE",
+				"$_SESSION〔variable〕"
+			],
+			[
+				"_S",
+				"$_SESSION〔variable〕"
+			],
+			[
+				"T",
+				"Tools	Tools"
+			],
+			[
+				"pass",
+				"password1"
+			],
+			[
+				"red",
+				"redirect($url)	mixed"
+			],
+			[
+				"value",
+				"valueGet($param)	mixed"
+			],
+			[
+				"con",
+				"confirmation()	mixed"
+			],
+			[
+				"in",
+				"input"
+			],
+			[
+				"forgo",
+				"forgot_ask"
+			],
+			[
+				"incl",
+				"include〔function〕"
+			],
+			[
+				"parent",
+				"parent_id"
+			],
+			[
+				"re",
+				"redirect($url)	mixed"
+			],
+			[
+				"fi",
+				"findPhone($phone)	mixed"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "app/modules/parent/index",
+			"settings":
+			{
+				"buffer_size": 12498,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "classes/School.php",
+			"settings":
+			{
+				"buffer_size": 14147,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "classes/Tools.php",
+			"settings":
+			{
+				"buffer_size": 2595,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/modules/student/fragments/panel_parent_stat_profile",
+			"settings":
+			{
+				"buffer_size": 2018,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/modules/student/fragments/panel_teacher_stat_profile",
+			"settings":
+			{
+				"buffer_size": 2104,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/ajax-chat-check-notif.js",
+			"settings":
+			{
+				"buffer_size": 3907,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "process/workers/ajax_chat.php",
+			"settings":
+			{
+				"buffer_size": 3898,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "process/workers/ajax_summernote_save.php",
+			"settings":
+			{
+				"buffer_size": 951,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "classes/Student.php",
+			"settings":
+			{
+				"buffer_size": 7596,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 368.0,
+		"last_filter": "p",
+		"selected_items":
+		[
+			[
+				"p",
+				"Package Control: Install Package"
+			],
+			[
+				"linting set",
+				"Preferences: SublimeLinter Settings – Default"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"sftp",
+				"SFTP: Browse Server…"
+			],
+			[
+				"pac",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 496.0
+	},
+	"console":
+	{
+		"height": 375.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/user/Documents/Projects/gradeaccessOOP",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/app/modules/user/fragments",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/process",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/process/workers"
+	],
+	"file_history":
+	[
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/app/admin/news_letter.php",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/app/admin/class.php",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/includes/teacher/main_nav.inc",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/app/modules/teacher/fragments/panel_teacher_stat_profile",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/app/teacher/class.php",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/classes/SchoolClass.php",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/classes/Student.php",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/process/workers/ajax_set_scores.php",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/js/table-edit-set-scores.js",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/classes/Assessment.php",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/app/modules/admin/a_assessment",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/app/modules/teacher/mark_att",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/app/modules/teacher/set_scores",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/app/modules/teacher/t_index",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/includes/functions.inc",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/profile.php",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/app/modules/user/profile",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/app/modules/user/fragments/edit_profile_modal.php",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/process/forms/profile.php",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/app/modules/student/fragments/panel_behaviour_stat_profile",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/signin.php",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/process/workers/ajax_update_behaviour.php",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/app/modules/user/fragments/add_behaviour_modal.php",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/classes/Tools.php",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/app/modules/user/message",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/app/modules/parent/fragments/panel_student_stat_profile",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/app/modules/parent/index",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/app/modules/parent/assessment",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/app/modules/admin/class",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/app/modules/admin/index",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/app/modules/admin/a_assign_staff",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/classes/School.php",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/classes/User.php",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/classes/Connection.php",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/includes/user/header.inc",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/includes/admin/main_nav.inc",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/includes/admin/header_navbar-left.inc",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/app/modules/admin/classes",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/app/modules/admin/add_t",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/class.php",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/less/sidebar.less",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/app/modules/student/fragments/panel_teacher_stat_profile",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/app/modules/student/fragments/panel_parent_stat_profile",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/js/chart-admin.js",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/app/modules/teacher/set_subjects",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/js/ajax-chat-check-notif.js",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/process/workers/ajax_chat.php",
+		"/C/Users/user/AppData/Local/Temp/fz3temp-1/.htaccess",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/plugins/toastr/toastr.min.css",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/plugins/toastr/toastr.min.js",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/app/modules/user/fragments/header_chat_icon_button.php",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/app/modules/user/chat_panel",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/js/ajax-chat.js",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/classes/Chat.php",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/includes/core_scripts.inc",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/includes/head.inc",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/message.php",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/app/modules/user/messages",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/css/gradeaccess.css",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/app/modules/user/fragments/upload_profile_pic_modal.php",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/less/palette.less",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/less/variables.less",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/signup.php",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/.htaccess",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/app/modules/parent/behaviours",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/less/header.less",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/less/color-variables/palette.1.less",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/classes/Session.php",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/classes/ParentClass.php",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/includes/parent/main_nav.inc",
+		"/C/Users/user/AppData/Roaming/Sublime Text 3/Packages/HTML-CSS-JS Prettify/HTMLPrettify.sublime-settings",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/app/modules/user/forgot_ask",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/app/modules/user/forgot_change",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/app/modules/user/forgot_confirmation",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/app/modules/user/forgot_email",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/crossdomain.xml",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/index.php",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/app/forgot.php",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/classes/App.php",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/forgot.php",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/process/forms/signup.php",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/app/modules/user/forgot_sms",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/includes/functions_no_session.inc",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/signout.php",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/app/modules/admin/school_data",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/app/modules/admin/activate_t",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/app/modules/admin/news",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/app/modules/admin/create_news",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/app/modules/admin/all_students",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/app/modules/parent/news",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/less/main.less",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/includes/teacher/header_navbar-right.inc",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/includes/parent/header_navbar-right.inc",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/includes/admin/header_navbar-right.inc",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/process/forms/add_t.php",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/app/admin/index.php",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/calendar.php",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/app/modules/admin/calendar",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/js/buttons.js",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/app/teacher/profile.php",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/app/admin/profile.php",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/app/parent/profile.php",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/app/modules/user/fragments/header_user_icon_button.php",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/classes/Cloudinary.php",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/app/modules/parent/profile",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/process/forms/classes.php",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/app/admin/classes.php",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/unauthorized.php",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/app/modules/teacher/unauthorized",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/app/modules/teacher/create_scores",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/app/modules/teacher/all_students",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/app/modules/teacher/t_give_s_detail",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/app/teacher/unauthorized.php",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/app/admin/calendar.php",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/behaviours.php",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/classes/Teacher.php",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/process/forms/school_data.php",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/classes.php",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/app/modules/user/fragments/newsletter_tile.php",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/app/parent/assessment.php",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/assessment.php",
+		"/C/Users/user/Documents/Projects/Frontend/contact.html",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/messages.php",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/app/admin/messages.php",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/app/teacher/mark_attendance.php",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/app/admin/school_data.php",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/school_data.php",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/js/main.js"
+	],
+	"find":
+	{
+		"height": 55.0
+	},
+	"find_in_files":
+	{
+		"height": 157.0,
+		"where_history":
+		[
+			"<project>",
+			"C:\\Users\\user\\Documents\\Projects\\gradeaccessOOP"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"\"",
+			"();\n",
+			"\"",
+			"\\\"",
+			"tstamp",
+			"\"",
+			"main-na",
+			"brand",
+			"include",
+			"includes/teacher/footer.inc",
+			"\"",
+			"class",
+			"getclas",
+			"];\n",
+			"\\\"",
+			"\"",
+			">\n",
+			"112px",
+			"getStudentsID",
+			"$row",
+			"\\\"",
+			"();\n",
+			"\"",
+			"pa_su_rel",
+			"parents",
+			"read",
+			".php",
+			"main-navigation",
+			"fffix",
+			"de",
+			"black",
+			".toggle-acc",
+			"fff",
+			".nav-title",
+			".sidebar a",
+			".sidebar a, .sidebar .nav-title",
+			".sidebar a:hover, .sidebar .nav-title:hover",
+			"fndraw",
+			"b",
+			"error"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"\\\"",
+			"\"",
+			"\\\"",
+			"includes/user/footer.inc",
+			"\\\"",
+			"\"",
+			"\\\"",
+			"'",
+			"\\\"",
+			"'",
+			"\\\"",
+			"$fields",
+			"\"",
+			"\\\"",
+			"parent_to_student",
+			".html"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 5,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "app/modules/parent/index",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 12498,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								416,
+								416
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "classes/School.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 14147,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5000,
+								5000
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2852.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "classes/Tools.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2595,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1839,
+								1839
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/modules/student/fragments/panel_parent_stat_profile",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2018,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1702,
+								1702
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/modules/student/fragments/panel_teacher_stat_profile",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2104,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								337,
+								337
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 425.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "js/ajax-chat-check-notif.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3907,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1398,
+								1398
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/JavaScriptNext - ES6 Syntax/JavaScriptNext.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 242.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "process/workers/ajax_chat.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3898,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3264,
+								3264
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "process/workers/ajax_summernote_save.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 951,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								565,
+								565
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "classes/Student.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7596,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5704,
+								5704
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_complete": false,
+							"bh_regions":
+							[
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content"
+							],
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": -0.0,
+						"translation.y": 2513.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 55.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.sftp":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "goop.sublime-project",
+	"replace":
+	{
+		"height": 106.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"user",
+				"classes\\User.php"
+			],
+			[
+				"funct",
+				"includes\\functions.inc"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 294.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

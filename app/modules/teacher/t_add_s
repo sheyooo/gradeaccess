@@ -1,0 +1,72 @@
+<section class="main-content">
+
+    <!-- content wrapper -->
+    <div class="content-wrap">
+
+        <!-- inner content wrapper -->
+        <div class="wrapper">
+            <div class="row">
+                <div class=" col-lg-12">
+                    <section class="panel panel-default">
+                        <header class="panel-heading">ADD STUDENTS TO YOUR CLASS</header>
+                        <div class="panel-body">
+
+                            <div class="table-responsive no-border">
+                                <table class="table table-bordered table-striped mg-t datatable editable-datatable">
+                                    <thead>
+                                    <tr>
+                                        <th>REG NO.</th>
+                                        <th>LAST NAME</th>
+                                        <th>FIRST NAME</th>
+                                        <th>GENDER</th>
+                                        <th>DATE OF BIRTH</th>
+                                        <th>EDIT</th>
+                                        <th>DELETE</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <?php
+                                    if($class_check){
+                                        if ($ids = $class->getStudentsID()) {
+
+                                            $html = null;
+
+                                            foreach ($ids as $id) {
+                                                $student = new Student($id);
+                                                $stu_det = $student->getFields();
+                                                $user_student = new User($id);
+                                                $user_stu_det = $user_student->getFields();
+
+                                                $html .= "<tr id=\"{$stu_det['student_id']}\" >";
+                                                $html .= "<td> {$stu_det['reg_no']} </td> ";
+                                                $html .= "<td> {$user_stu_det['last_name']} </td>";
+                                                $html .= "<td> {$user_stu_det['first_name']} </td>";
+                                                $html .= "<td class=\"text-uppercase\"> {$user_stu_det['sex']} </td>";
+                                                $html .= "<td> {$stu_det['dob']} </td>";
+                                                $html .= "<td> <a href=\"javascript:;\" id=\"{$stu_det['student_id']}\" class=\"edit\">Edit</a> </td>";
+                                                $html .= "<td> <a href=\"javascript:;\" id=\"{$stu_det['student_id']}\" class=\"delete\">Delete</a> </td>";
+
+                                                $html .= "</tr>";
+
+                                            }
+
+                                            echo $html;
+                                        }
+                                    }
+
+                                    ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <!-- /inner content wrapper -->
+    </div>
+    <!-- /content wrapper -->
+    <?php include("includes/user/footer.inc"); ?>
+    <a class="exit-offscreen"></a>
+</section>
+

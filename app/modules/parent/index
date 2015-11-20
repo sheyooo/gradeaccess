@@ -1,0 +1,330 @@
+<section class="main-content">
+
+    <div class="content-wrap">
+        <div class="wrapper">
+
+            <?php
+            $ave = 0;
+            $last_grd = "NO GRADES TO SHOW YET";
+
+            if($psu_check){
+
+                if($id = $student->getLastAssessmentId()){
+                    $ass = new Assessment($id);
+                    $ave = $ass->getAverage();
+                    $grd = $school->getGrade($ave);
+
+                    $last_grd = "<span class=\"lead\" >GRADE:</span>{$grd[0]} <span class=\"pull-right\"><span class=\"lead\">PERCENTAGE:</span>{$ave}%</span>";
+                }
+            }
+            ?>
+            <div class="row">
+
+                <div class="col-xs-12 col-lg-4">
+                <a href="assessment.php">
+                    <section class="dash-tile bordered bg-white material-shadow">
+                        <div class="tile-title">RESULTS FROM LAST ASSESSMENT</div>
+                        <div class="tile-stats"><b><p class="overflow-hidden"><?php echo $last_grd; ?></p></b>
+                        </div>
+                        <div class="progress progress-xs mt5 mb10">
+                            <div class="progress-bar progress-bar-success done" role="progressbar" aria-valuenow="<?php echo $ave; ?>"
+                             aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $ave ?>%">
+                         </div>
+                     </div>
+
+                 </section>
+                 </a>
+             </div>
+
+             <div class="col-xs-12 col-lg-4">
+                <section class="widget bg-primary material-shadow">
+                    <div class="widget-body">
+                        <a href="javascript:;" class="pull-left mr15">
+                            <img src="img/faceless.jpg" class="avatar avatar-md img-circle" alt="">
+                        </a>
+
+                        <div class="overflow-hidden">
+                            <div>
+                                <small class="pull-right"><?php echo $school->admin()['rank']; ?></small>
+                                <b><?php echo $school->admin()['name']; ?></b>
+                            </div>
+                            <small class="show"><?php echo $school->getLocation(); ?></small>
+
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="col-xs-12 col-lg-4">
+                <section class="widget bg-primary material-shadow">
+                    <div class="widget-body">
+                        <a href="javascript:;" class="pull-left mr15">
+                            <img src="img/faceless.jpg" class="avatar avatar-md img-circle" alt="">
+                        </a>
+
+                        <div class="overflow-hidden">
+                            <div>
+                                <small class="pull-right"><?php echo $school->assistant()['rank']; ?></small>
+                                <b><?php echo $school->assistant()['name']; ?></b>
+                            </div>
+                            <small class="show"><?php echo $school->getLocation(); ?></small>
+
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <?php
+            $behaviour_tile_dash_color = "";
+            $behaviour_tile_detail = "";
+            if($psu_check){
+                if($behaviour = $student->getLastBehaviour()){
+                    $behaviour_tile_detail = $behaviour['behaviour'];
+                    if($behaviour['type'] == 0){
+                        $behaviour_tile_dash_color = "bg-danger ";
+                    } else{
+                        $behaviour_tile_dash_color = " bg-success ";
+                    };
+
+                    if ($behaviour['behaviour'] == ""){
+                        if($behaviour['type'] === 0){
+                            $behaviour_tile_detail = "Has been showing some negative behaviour";
+                            $behaviour_tile_dash_color = " bg-danger ";
+                        } else{
+                            $behaviour_tile_detail = "Averagely normal positive behaviour";
+                            $behaviour_tile_dash_color = " bg-success ";
+                        };                    
+                    };
+
+                    echo "<div class=\"col-xs-12 col-lg-4\">
+                    <a href=\"behaviours.php\" title=\"{$behaviour_tile_detail}\">
+                        <section class=\"dash-tile {$behaviour_tile_dash_color} material-shadow\">
+                            <div class=\"tile-title\"><b>{$user_student->getFullname()} </b></div>
+                            <div class=\"tile-stats\"><b>{$student->getClass()['class']} {$student->getClass()['arm']}</b>
+                            </div>
+                            <div class=\"tile-bottom \" style=\"overflow: hidden;\">
+                                <small><i class=\"ti-arrow-circle-right mr5\"></i>{$behaviour['time']}</small>
+                            </div>
+                            <div class=\"tile-footer\">
+                                {$behaviour_tile_detail}
+                            </div>
+                            <div class=\"tile-icon\">
+                                <i class=\"ti-user\"></i>
+                            </div>
+                        </section>
+                    </a>
+                </div>";
+
+            }
+    } else {
+        echo "<div class=\"col-xs-12 col-lg-4\">
+        <a href=\"link.php\" title=\"Link your child to this account\">
+            <section class=\"dash-tile bg-primary material-shadow\">
+                <div class=\"tile-title\">No Student Linked</div>
+                <div class=\"tile-stats\"><b> <a href=\"link.php\">Click to link student</a> </b>
+                </div>
+                <div class=\"tile-bottom\">
+                    <small><i class=\"ti-arrow-circle-right mr5\"></i> Link your child </small>
+                </div>
+                <div class=\"tile-footer\">
+                    {$school->getName()}
+                </div>
+                <div class=\"tile-icon\">
+                    <i class=\"ti-user\"></i>
+                </div>
+            </section>
+        </a>
+    </div>";
+
+};
+
+
+?>
+
+
+
+
+<?php
+
+if ($chat = $user->getLastMessage()) {
+    $time = strtotime($chat['time']);
+    //echo $chat['from_user_id'];
+    $chat_user = new User($chat['from_user_id']);
+
+    if(!$chat_user->getPhone()){
+        $phone = "No phone number";
+        $phone_link = "javascript:;";
+    }else{
+        $phone = "Call {$chat_user->getFirstNameWithTitle()}";
+        $phone_link = "tel:{$chat_user->getPhone()}";
+    }
+
+
+    echo "
+    <div class=\"col-xs-12 col-lg-4\">
+        <section class=\"panel panel-default position-relative material-shadow\">
+            <div class=\"panel-heading\">
+                <b>CHATS</b>
+                <div class=\"pull-right\">
+                    <a href=\"{$phone_link}\" class=\"btn btn-social btn-xs btn-primary\">
+                        <i class=\"fa fa-phone\" style=\"color: white;\"></i><span style=\"color: white;\" class=\"\"> {$phone} </span>
+                    </a>
+                </div>
+            </div>
+            <div class=\"panel-body\">                                        
+                <a href=\"profile.php?guid={$chat_user->getID()}\" class=\"pull-left mr15\">
+                    <img src=\"{$chat_user->getProfilePictureURL()}\" class=\"avatar avatar-sm img-circle\" alt=\"\">
+                </a>
+                <div class=\"overflow-hidden\">
+                    <a href=\"message.php?guid={$chat['from_user_id']}\">
+                        <p class=\"no-m\">
+                            <b>{$chat_user->getFullname()}</b>
+                        </p>
+                    </a>
+                </div>     
+                <a href=\"message.php?chat_id={$chat['chat_id']}\">                       
+                    <p class=\"small\">
+                        <i class=\"fa fa-circle text-primary mr5\"></i>{$chat['message']}
+                    </p>
+                    <small data-livestamp=\"$time\"></small>
+                </a>                                        
+            </div>
+        </section>
+    </div>
+    ";
+} else {
+    echo "
+    <div class=\"col-xs-12 col-lg-4\">
+        <section class=\"panel panel-default position-relative material-shadow\">
+            <div class=\"panel-heading\">
+                <b>NO CHAT RECORDS</b>
+                <div class=\"pull-right\">
+                    <a href=\"tel:{$school->getTelephone()[0]}\" class=\"btn btn-social btn-xs btn-primary\">
+                        <i style=\"color: white;\" class=\"fa fa-phone\"></i><span style=\"color: white;\" class=\"\"> Call school </span>
+                    </a>
+                </div>
+            </div>
+            <div class=\"panel-body\">
+                <a href=\"javascript:;\" class=\"pull-left mr15\">
+                    <img src=\"img/faceless.jpg\" class=\"avatar avatar-sm img-circle\" alt=\"\">
+                </a>
+                <div class=\"overflow-hidden\">
+                    <p class=\"no-m\">
+                        <b> </b>
+                    </p>
+                </div>                            
+                <p class=\"small\">
+                    <i class=\"fa fa-circle text-primary mr5\"></i>No Recent Messages
+                </p>
+            </div>
+        </section>
+    </div>
+    ";
+};
+
+
+
+?>
+<div class="col-xs-12 col-lg-4">
+    <?php
+    include(__DIR__ . "/../user/fragments/newsletter_tile.php");
+    ?>
+</div>
+
+
+</div>
+
+<div class="row">
+
+    <?php
+
+    $att;
+
+    if ($psu_check) {
+
+        if($att = $student->getAttendance(Tools::getCurrentDateAttendance())){
+            $state = "MARKED PRESENT";
+            $lil_state = "Currently <b>Present</b>";
+            $att = "success";
+        } else {
+            $state = "MARKED ABSENT";
+            $lil_state = "Currently <b>Not</b> in school";
+            $att = "danger";
+        }
+
+
+
+        echo "
+        <div class=\"col-xs-12 col-lg-3\">
+            <section class=\"dash-tile bg-{$att} material-shadow\">
+                <div class=\"tile-title\">ATTENDANCE</div>
+                <div class=\"tile-stats\">{$state}
+                </div>
+                <div class=\"tile-bottom\">
+                    <small><i class=\"ti-check mr5\"></i> {$lil_state} </small>
+                </div>
+                <div class=\"tile-footer\">
+                    {$student->getClass()['class']} {$student->getClass()['arm']}
+                </div>
+                <div class=\"tile-icon\">
+                    <i class=\"ti-calendar\"></i>
+                </div>
+            </section>
+        </div>
+        ";
+        
+    }
+
+    ?>
+
+
+    <div class="col-xs-12 col-lg-4">
+        <a href="link.php">
+            <section class="dash-tile bg-primary material-shadow">
+                <div class="tile-title">ADD A CHILD TO THIS ACCOUNT</div>
+                <div class="tile-stats"><b>Add my child</b>
+                </div>
+                <div class="tile-bottom">
+                    <small><i class="ti-arrow-circle-right mr5"></i>Click to add <b>your son or daughter to this account</b></small>
+                </div>
+                <div class="tile-footer">
+                    This creates a link of the student to this account
+                </div>
+                <div class="tile-icon">
+                    <i class="ti-check-box"></i>
+                </div>
+            </section>
+        </a>
+    </div>
+
+    <div class="col-xs-12 col-lg-3">
+        <a href="rules_and_reg.php">
+            <section class="dash-tile bg-primary material-shadow">
+                <div class="tile-title">RULES AND REGULATIONS</div>
+                <div class="tile-stats"><b>Rules</b>
+                </div>
+                <div class="tile-bottom">
+                    <small><i class="ti-arrow-circle-right mr5"></i>Click to see <b>Rules and
+                        Regulations</b></small>
+                    </div>
+                    <div class="tile-footer">
+                        <?php echo $school->getName(); ?>
+                    </div>
+                    <div class="tile-icon">
+                        <i class="ti-book"></i>
+                    </div>
+                </section>
+            </a>
+        </div>
+
+    </div>
+
+</div>
+</div>
+
+<?php include("includes/user/footer.inc"); ?>
+<a class="exit-offscreen"></a>
+</section>

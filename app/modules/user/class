@@ -1,0 +1,126 @@
+<?php
+    //$mode = "classes";
+$html = "<p class=\"h3 text-center text-uppercase text-muted\"><b>No Classes in this school yet</b></p>";
+if($id = Tools::valueGet("guid")){
+    if($class = new SchoolClass($id) AND $school->getID() == $class->getSchoolID()){
+        $mode = "students";
+        $teachers = $class->getTeachersID();
+        $students = $class->getStudentsID();
+        $panel_title = $class->getClassName();
+    }else{
+        $mode = "classes";
+        $classes = $school->getClassesID();
+        $panel_title = "Classes of " . $school->getName();
+    }
+}else{
+    $mode = "classes";
+    $classes = $school->getClassesID();
+    $panel_title = "Classes of " . $school->getName();
+}
+
+
+
+
+if($mode == "classes"){
+    $html = "";
+  foreach ($classes as $id) {
+   $class = new SchoolClass($id);
+
+   $html .= "<div class=\"col-xs-12 col-md-4 col-lg-3 text-center\"> 
+   <a href=\"class.php?guid={$class->getID()}\">
+    <div class=\"panel material-shadow\">
+        <div class=\"panel-body\">
+            <i class=\"fa fa-bank fa-5x text-muted\"></i>
+        </div>
+        <div class=\"panel-footer\">
+            {$class->getClassName()}
+        </div>
+    </div>
+</a>
+</div>";
+}
+
+}elseif($mode == "students"){
+    $html = "";
+
+    if($teachers){
+        $html .= "<div class=\"row text-center\">";
+
+        foreach ($teachers as $id) {
+            $t = new Teacher($id);
+            $t_u = new User($id);
+
+            $html .= "<div class=\"col-xs-12 col-sm-6 col-md-4 col-lg-2 text-center\"> 
+            <a href=\"profile.php?guid={$t_u->getID()}\">
+                <div class=\"panel panel-primary material-shadow\">
+                    <div class=\"panel-heading\"> CLASS TEACHER </div>
+                    <div class=\"panel-body\">
+                        <img class=\"thumbnail col-xs-12\" src=\"{$t_u->getProfilePictureURL()}\" alt=\"\" >
+                    </div>
+                    <div class=\"panel-footer\">
+                        {$t_u->getFullName()}
+                    </div>
+                </div>
+            </a>
+        </div>";
+    }
+    $html .= "</div>";
+
+}
+
+
+
+if($students){
+    $html .= "<div class=\"row text-center\">";
+    $panel_title .= " | CLASS OF " . count($students) . " STUDENTS";
+    foreach ($students as $id) {
+        $student = new Student($id);
+        $s_u = new User($id);              
+
+        $html .= "<div class=\"col-xs-12 col-sm-6 col-md-4 col-lg-2 text-center\"> 
+        <a href=\"profile.php?guid={$s_u->getID()}\">
+            <div class=\"panel panel-default material-shadow\">
+                <div class=\"panel-heading\">STUDENT</div>
+                <div class=\"panel-body\">
+                    <img class=\"thumbnail col-xs-12\" src=\"{$s_u->getProfilePictureURL()}\" alt=\"\" >
+                </div>
+                <div class=\"panel-footer\">
+                    {$s_u->getFullName()}
+                </div>
+            </div>
+        </a>
+    </div>";
+
+}
+
+$html .= "</div>";
+
+}else{
+    $html = "<p class=\"h3 text-center text-uppercase text-muted\"><b>No Students in this class</b></p>";
+}
+}
+
+
+?>
+<section class="main-content">
+
+    <div class="content-wrap">
+        <div class="wrapper">
+            <div class="panel panel-primary material-shadow">
+                <div class="panel-heading">
+                    <div class="text-center h3 no-m">
+                        <?php echo $panel_title; ?>
+                    </div>
+                </div>
+                <div class="panel-body">                            
+                    <?php echo $html; ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <?php include("includes/user/footer.inc"); ?>
+
+    <a class="exit-offscreen"></a>
+</section>

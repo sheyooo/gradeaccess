@@ -1,0 +1,111 @@
+<section class="main-content">
+
+    <!-- content wrapper -->
+    <div class="content-wrap">
+
+        <!-- inner content wrapper -->
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-xs-12">
+                    <section class="panel panel-default">
+                        <header class="panel-heading">ALL STUDENTS</header>
+                        <div class="panel-body">
+
+                            <div class="table-responsive no-border">
+                                <table class="table table-hover table-bordered mg-t datatable">
+                                    <thead>
+                                        <tr>
+                                            <th>NAME</th>
+                                            <th>SEX</th>
+                                            <th>BEHAVIOUR</th>
+                                            <th>ATTENDANCE</th>
+                                            <th>AGE</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php
+                                        $students = null;
+                                        $behaviour = null;
+
+                                        $conn = mysqli_connect($db_host, $db_user, $db_pass, $database) or die("error");
+
+                                        $command = "SELECT * FROM students
+                                        WHERE students.class_id = {$_SESSION['my_class']} ";
+                                        $result = mysqli_query($conn, $command);
+                                        if(mysqli_num_rows($result)){
+                                            while($row = mysqli_fetch_array($result)){
+                                                $students[$row['student_id']] = $row;
+                                            }
+                                            
+                                        };
+
+
+                                        $result = mysqli_query($conn, "SELECT * FROM students
+                                            LEFT JOIN behaviour beh
+                                            ON (students.student_id = beh.student_id)
+                                            WHERE time = (SELECT MAX(time) FROM behaviour beha
+                                                WHERE beh.student_id = beha.student_id) 
+                                        AND students.class_id = {$_SESSION['my_class']}") or die("diee");
+
+
+
+                                        if (mysqli_num_rows($result)) {
+                                            while($row = mysqli_fetch_array($result)){
+                                                $behaviour[$row['student_id']] = $row;
+                                            }
+                                        };
+
+
+                                        if (mysqli_num_rows($result)) {
+                                            foreach ($students as $key => $value) {
+                                                $row_accum = null;
+                                                $behaviour_text = null;
+
+                                                if ($students[$key]['today'] == 1) {
+                                                    $td_today = "<td class='success'> Present for Today </td>";
+                                                } else {
+                                                    $td_today = "<td class='danger'> Absent for Today </td>";
+                                                };
+
+                                                if(isset($behaviour[$key]['behaviour'])){
+                                                    $behaviour_text = $behaviour[$key]['behaviour'];
+                                                };
+
+                                            //date in mm/dd/yyyy format; or it can be in other formats as well
+                                                $birthDate = $students[$key]['dob'];
+                                            //explode the date to get month, day and year
+                                                $birthDate = explode("-", $birthDate);
+                                            //get age from date or birthdate
+                                                $age = (date("md", date("U", mktime(0, 0, 0, $birthDate[0], $birthDate[1], $birthDate[2]))) > date("md")
+                                                    ? ((date("Y") - $birthDate[0]) - 1)
+                                                    : (date("Y") - $birthDate[0]));
+
+
+                                                $row_accum .= "<tr>";
+                                                $row_accum .= "<td> {$students[$key]['last_name']} {$students[$key]['first_name']} </td>";
+                                                $row_accum .= "<td class='text-capitalize'> {$students[$key]['sex']} </td>";
+                                                $row_accum .= "<td> {$behaviour_text} </td>";
+                                                $row_accum .= $td_today;
+                                                $row_accum .= "<td> {$age} </td>";
+
+                                                $row_accum .= "</tr>";
+                                                echo $row_accum;
+                                            }
+                                        }
+
+                                        ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <!-- /inner content wrapper -->
+    </div>
+    <!-- /content wrapper -->
+    <?php include("includes/user/footer.inc"); ?>
+    <a class="exit-offscreen"></a>
+</section>
+

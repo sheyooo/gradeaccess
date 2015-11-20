@@ -1,0 +1,105 @@
+<aside class="sidebar-250 canvas-right bg-default br ">
+
+    <div class="p15">
+        <div class="h3 no-m text-uppercase">
+            <strong class="week-day"></strong>
+        </div>
+        <div class="h5 current-date"></div>
+
+
+
+        <h6 class="mt25">Draggable <b>Events</b></h6>
+
+        <div class="input-group mb25">
+            <input type="text" class="form-control input-sm new-event">
+            <div class="input-group-btn">
+
+
+                <div class="btn-group">
+                    <button type="button" class="btn btn-default btn-outline btn-sm dropdown-toggle" data-toggle="dropdown">
+                        <span id="event-color-btn">
+                            
+                            <i class="fa fa-circle"></i>
+                        </span>
+                    </button>
+                    <ul class="dropdown-menu event-color pull-rightd" role="menu">
+                        <li><a href="#" data-class="primary"><i class="fa fa-circle text-primary"></i> Primary</a>
+                        </li>
+                        <li><a href="#" data-class="success"><i class="fa fa-circle text-success"></i> Success</a>
+                        </li>
+                        <li><a href="#" data-class="info"><i class="fa fa-circle text-info"></i> Info</a>
+                        </li>
+                        <li><a href="#" data-class="warning"><i class="fa fa-circle text-warning"></i> Warning</a>
+                        </li>
+                        <li><a href="#" data-class="danger"><i class="fa fa-circle text-danger"></i> Danger</a>
+                        </li>
+                        <li><a href="#" data-class="color"><i class="fa fa-circle text-color"></i> Default</a>
+                        </li>
+
+                    </ul>
+                </div>
+                <button type="button" class="btn btn-default btn-outline btn-sm add-event">Add</button>
+
+            </div>
+        </div>
+
+        <div class="external-events mb15" id="external-events">
+            <div class="external-event label label-color" data-class="bg-color">Team Building</div>
+            <div class="external-event label label-primary" data-class="bg-primary">Personal Event</div>
+            <div class="external-event label label-success" data-class="bg-success">Meeting</div>
+            <div class="external-event label label-info" data-class="bg-info">Recreational</div>
+            <div class="external-event label label-warning" data-class="bg-warning">Task</div>
+            <div class="external-event label label-danger" data-class="bg-danger">Event</div>
+        </div>
+        <p>
+            <input type="checkbox" id="drop-remove">
+            <label for="drop-remove">remove after drop</label>
+        </p>
+    </div>
+
+</aside>
+
+<!-- main content -->
+<section class="main-content bg-white">
+
+    <header class="header navbar bg-white shadow">
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary navbar-btn" id="calendar-prev">Left</button>
+            <button type="button" class="btn btn-primary navbar-btn" id="calendar-next">Middle</button>
+        </div>
+
+        <div class="pull-right">
+            <a href="javascript:;" class="btn btn-primary navbar-btn" id="calendar-today">Middle</a>
+            <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-primary navbar-btn" id="calendar-month">
+                    <input type="radio" name="options" id="option2">
+                    <span></span>
+                </label>
+                <label class="btn btn-primary navbar-btn" id="calendar-week">
+                    <input type="radio" name="options" id="option3">
+                    <span></span>
+                </label>
+                <label class="btn btn-primary navbar-btn" id="calendar-day">
+                    <input type="radio" name="options" id="option4">
+                    <span></span>
+                </label>
+            </div>
+        </div>
+    </header>
+
+    <!-- content wrapper -->
+    <div class="content-wrap">
+
+        <!-- inner content wrapper -->
+        <div class="wrapper no-p">
+
+            <div id="calendar"></div>
+
+        </div>
+        <!-- /inner content wrapper -->
+
+    </div>
+    <!-- /content wrapper -->
+    <a class="exit-offscreen"></a>
+</section>
+<!-- /main content -->

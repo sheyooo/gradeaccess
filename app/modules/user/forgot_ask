@@ -1,0 +1,41 @@
+<div class="row">
+    <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+        <section class="panel bg-white no-b">
+
+        <div class="panel-heading">
+            <p class="text-center">Lost your password? Please choose a convenient method to reset your password.</p>
+        </div>
+            
+            <div class="p15 panel-body">
+
+                
+                <div class="row">
+                    <div class="col-xs-12 mb5"> 
+                        <a class="btn btn-block btn-primary btn-lg btn-outline" href="forgot.php?stage=email">Reset your password through your email</a>
+                    </div>
+
+                    <div class="col-xs-12">
+                        <a class="btn btn-block btn-primary btn-lg btn-outline" href="forgot.php?stage=sms">Reset your password through SMS</a>
+                    </div>
+
+                    <div class="col-xs-12">
+                        <a class="btn btn-block btn-danger btn-lg mt25 btn-outline" href="signin.php">Go back to Sign in</a>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </section>
+        <p class="text-center">
+            Copyright &copy;
+            <span id="year" class="mr0"></span>
+            <span>Grade Access</span>
+        </p>
+        <p class="text-center">
+            Made with 
+            <i class="fa fa-heart" style="color: #f22;"></i>
+            in Lagos, Nigeria.
+        </p>
+    </div>
+</div>

@@ -1,0 +1,267 @@
+<?php
+$average = 0;
+$stat = 0;
+$t_color = 0;
+$terms;
+$sessions;
+$heading_content_1 = null;
+$heading_content_2 = null;
+$heading_content_3 = null;
+$score_rows = null;
+$row_name;
+$row_subj;
+$subj_array;
+
+?>
+<section class="main-content">
+
+    <div class="content-wrap">
+        <div class="wrapper">
+            <?php
+            if ($scores) {
+
+                $average = $assessment->getAverage();
+                if($average > 50){
+                    $stat = "<p class=\"text-primary\">Pass</p>";
+                    $t_color = "success";
+                } else{
+                    $stat = "<p class=\"text-danger\">Fail</p>";
+                    $t_color = "danger";
+                };
+
+                $overall_grade = $school->getGrade($assessment->getAverage())[0];                
+
+
+                $html ="
+                <div class=\"row mb15\">
+
+                    <div class=\"col-xs-12 pull-right text-right\"><b>{$period_reminder}</b></div>
+                </div>
+
+                <div class=\"row mb15\">
+
+                    <div class=\"col-xs-12 col-lg-4 text-center\">
+                     <h4 class=\"text-uppercase\">{$user_student->getFullName()}</h4>
+                 </div>
+
+                 <div class=\"col-xs-6 pull-right text-center\">
+                    <h4 class=\"text-uppercase\">{$user_student->getSex()}</h4>
+                </div>
+            </div>
+
+            <div class=\"row mb15\">
+                <div class=\"col-xs-12 col-lg-4 text-center\">
+                    <h3>{$student->getAge()} </h3>
+                </div>                
+
+                <div class=\"col-xs-12 col-lg-6 text-right\">
+                    <h3>{$student->getClass()['class']} <span class=\"small\">{$student->getClass()['arm']}</span></h3>
+                </div>
+
+                <div class=\"col-xs-12 col-lg-2 text-right\">
+                    <h3></h3>
+                </div>
+            </div>
+
+            <div class=\"row mb15\">
+                <div class=\"col-xs-12 col-lg-4 text-center\">
+                    <h3><small>GRADE:</small> {$overall_grade}</h3>
+                </div>
+
+                <div class=\"col-xs-12 col-lg-8 text-right\">
+                    <h3><small>FORM TUTOR:</small> {$c_teacher->getFullName()}</h3>
+                </div>                
+            </div>
+            ";
+
+
+            $html .= "
+            <div class=\"row\">
+
+                <div class=\"col-xs-12 col-lg-4 text-center\">
+                    <section class=\"panel\">
+
+                        <div class=\"piechart\">
+                            <span class=\"chart\" data-percent=\"{$average}\">
+                                <span>
+                                    <div class=\"percent text-{$t_color}\"></div>
+                                    {$stat}
+                                </span>
+                            </span>
+                        </div>
+
+                        <h5>Total <b>Exams</b></h5>
+                    </section>
+                </div>
+
+                <div class=\"col-xs-12 col-lg-4 pull-right\">
+                    <section class=\"dash-tile bg-primary\">
+                        <div class=\"tile-title\">AVERAGE</div>
+                        <div class=\"tile-stats\"><b>{$average} %</b>
+                        </div>
+                        <div class=\"tile-bottom\">
+                            <small><i class=\"ti-arrow-circle-right mr5\"></i>{$school->getName()}</small>
+                        </div>
+                        <div class=\"tile-footer\">
+                            This term's result
+                        </div>
+                        <div class=\"tile-icon\">
+                            <i class=\"ti-stats-up\"></i>
+                        </div>
+                    </section>
+                </div>
+            </div>";
+
+
+            $html .= "
+            <div class=\"row\">
+            </div>";
+
+            $subjects = null;
+            $subjects_panel = null;
+            $progress_type = null;
+            $tone = null;
+            $grade = null;
+            $score = null;
+
+
+            foreach ($scores as $key => $value) {
+                $grade = $school->getGrade($value['score']);
+                $subject = $value['name'];
+                $score = $value['score'];
+
+                switch ($value['score']) {
+
+                    case -2:
+                    $progress_type = "progress-striped";
+                    $tone = "danger";
+                    $real_grade = "Failed";
+                    $grade_desc = "Exam Malpractice";
+                    $score = "";
+                    $progress = "100";
+
+
+                    break;
+
+                    case -1:
+                    $progress_type = "progress-striped";
+                    $tone = "danger";
+                    $real_grade = "Failed";
+                    $grade_desc = "Missed Test";
+                    $score = "";
+                    $progress = "100";
+
+                    break;
+
+                    case ($value['score'] >= 0):
+
+                    $progress_type = "";
+                    $tone = "danger";
+                    $real_grade = $grade[0];
+                    $grade_desc = $grade[1];
+                    $score = $value['score'];
+                    $progress = $score;
+
+                    if ($value['score'] > 55) {
+                        $panel = "panel-primary";
+                        $tone = "success";
+                    } else {
+                        $panel = "panel-primary";
+                        $tone = "danger";
+                    };
+
+                    break;
+
+                    default:
+                
+                    $progress_type = "progress-striped";
+                    $tone = "danger";
+                    $real_grade = "Failed";
+                    $grade_desc = "Failed";
+                    $score = "";
+                    $progress = "100";
+                }
+
+                $subjects_panel .= "
+                <div class=\"col-xs-12 col-lg-3\">
+                    <div class=\"panel bordered\">
+                        <div class=\"panel-heading text-center\">
+                            {$subject}
+                        </div>
+
+                        <div class=\"panel-body no-p\">
+                            <div class=\"progress progress-lg {$progress_type} no-m no-radius\">
+                                <div class=\"progress-bar progress-bar-{$tone} done\" role=\"progressbar\" aria-valuenow=\"{$progress}\" aria-valuemin=\"0\" aria-valuemax=\"100\" 
+                                style=\"width: {$progress}%\">
+                                <span class=\"sr-only\">{$score}%</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <footer class=\"panel-footer text-center\">
+                        <div class=\"row\">
+                            <div class=\"col-xs-12\">
+                                <div class=\"small show text-uppercase text-muted\">{$score} ({$grade_desc})</div>
+                                <div class=\"h4 no-m\"><b>{$real_grade}</b>
+                                </div>
+                            </div>
+                        </div>
+                    </footer>
+                    </div>
+                </div>";
+        }
+
+    }else {
+        $html =  "<div class=\"col-xs-10 col-xs-offset-1 well\"><h3 class=\"text-center\">NO TESTS FOR THIS PERIOD TRY ANOTHER TERM</h3></div>";
+}
+
+?>
+<section class="panel panel-default">
+    <div class="panel-heading clearfix">
+        <div class="col-xs-12 col-lg-2">
+
+            <?php echo $period_reminder; ?>
+        </div>
+
+        <form class="form-horizontal" method="get" action="assessment.php" role="form">
+            <label for="year" class="control-label col-xs-1 col-xs-offset-0">YEAR: </label>
+
+            <div class="col-xs-12 col-lg-3">
+                <select name="year" id="year" class="form-control">
+                    <?php echo $options; ?>
+                </select>
+            </div>
+
+            <label for="term" class="control-label col-xs-1">TERM: </label>
+
+            <div class="col-xs-12 col-lg-3">
+                <select name="term" id="term" class="form-control">
+                    <?php echo $options1; ?>
+                </select>
+            </div>
+            <div class="col-xs-12 col-lg-2">
+                <button type="submit" class="btn btn-primary form-control">FIND</button>
+            </div>
+        </form>
+
+    </div>
+    <div class="panel-body">
+        <?php echo $html; ?>
+
+    </div>
+
+</section>
+
+<?php 
+if($scores){
+    echo $subjects_panel;
+    } 
+?>
+
+
+</div>
+</div>
+<?php include("includes/user/footer.inc"); ?>
+<a class="exit-offscreen"></a>
+</section>

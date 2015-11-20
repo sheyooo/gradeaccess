@@ -1,0 +1,448 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"main",
+				"mainCtrl"
+			],
+			[
+				"lo",
+				"$location	AngularJS"
+			],
+			[
+				"cont",
+				"controller	AngularJS"
+			],
+			[
+				"dr",
+				"dropdown"
+			],
+			[
+				"av",
+				"average"
+			],
+			[
+				"li",
+				"link	Tag"
+			],
+			[
+				"bo",
+				"bower_components"
+			],
+			[
+				"e",
+				"ethis	<?php echo $this->… ?>"
+			],
+			[
+				"div",
+				"div"
+			],
+			[
+				"rg",
+				"rgba()"
+			],
+			[
+				"b",
+				"black"
+			],
+			[
+				"su",
+				"sub-menu"
+			],
+			[
+				"c",
+				"color"
+			],
+			[
+				"w",
+				"width"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"bol",
+				"bolder"
+			],
+			[
+				"pad",
+				"padding"
+			],
+			[
+				"bac",
+				"background"
+			],
+			[
+				"ba",
+				"background"
+			],
+			[
+				"subjects",
+				"subjects_offered"
+			],
+			[
+				"stu",
+				"student_id"
+			],
+			[
+				"print",
+				"print_r〔function〕"
+			],
+			[
+				"st",
+				"$student_class〔variable〕"
+			],
+			[
+				"in",
+				"initialized"
+			],
+			[
+				"prin",
+				"print_r〔function〕"
+			],
+			[
+				"class",
+				"class_id"
+			],
+			[
+				"l",
+				"last_name"
+			],
+			[
+				"mysql_num",
+				"mysql_numrows〔function〕"
+			],
+			[
+				"MYSQLI",
+				"MYSQLI_BOTH〔constant〕"
+			],
+			[
+				"no",
+				"noNullSendToDb"
+			],
+			[
+				"ch",
+				"checkInvalidFields"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"background-",
+				"background-clip"
+			],
+			[
+				"$tim",
+				"$time_diff_in_min〔variable〕"
+			],
+			[
+				"last",
+				"last_ping"
+			],
+			[
+				"sen",
+				"send_ping_to_db〔function〕"
+			],
+			[
+				"s",
+				"sheyiadekoya"
+			],
+			[
+				"backgou",
+				"background-size"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 344.0,
+		"last_filter": "linting set",
+		"selected_items":
+		[
+			[
+				"linting set",
+				"Preferences: SublimeLinter Settings – Default"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"sftp",
+				"SFTP: Browse Server…"
+			],
+			[
+				"p",
+				"Package Control: Disable Package"
+			],
+			[
+				"pac",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 496.0
+	},
+	"console":
+	{
+		"height": 375.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/user/Documents/Projects/gradeaccess/includes/template_scripts.inc",
+		"/C/Users/user/Documents/Projects/gradeaccess/index.php",
+		"/C/Users/user/Documents/Projects/gradeaccess/includes/core_scripts.inc",
+		"/C/Users/user/Documents/Projects/gradeaccessangular/app/js/app.js",
+		"/C/Users/user/Documents/Projects/gradeaccessangular/app/js/controllers/mainCtrl.js",
+		"/C/Users/user/Desktop/GRADE ACCESS/material-master/gulp/tasks/server.js",
+		"/C/Users/user/Documents/Projects/gradeaccessangular/app/js/main.js",
+		"/C/Users/user/Documents/Projects/gradeaccessangular/app/components/parent/sidebar.html",
+		"/C/Users/user/Documents/Projects/gradeaccessangular/app/templates/header.html",
+		"/C/Users/user/Documents/Projects/gradeaccessangular/app/views/parent.html",
+		"/C/Users/user/Documents/Projects/gradeaccessangular/app/index.html",
+		"/C/Users/user/Desktop/GRADE ACCESS/material-master/bower_components/angular-material/angular-material.js",
+		"/C/Users/user/Desktop/GRADE ACCESS/material-master/package.json",
+		"/C/Users/user/Desktop/GRADE ACCESS/material-master/gulpfile.js",
+		"/C/Users/user/Documents/Projects/gradeaccessangular/app/bower_components/README.md",
+		"/C/Users/user/AppData/Roaming/Sublime Text 3/Packages/SublimeLinter/SublimeLinter.sublime-settings",
+		"/C/Users/user/Documents/Projects/gradeaccess/js/my-script.js",
+		"/C/Users/user/Documents/Projects/gradeaccess/js/main.js",
+		"/C/Users/user/Documents/Projects/gradeaccessangular/app/bower_components/ng-fastclick/dist/index.js",
+		"/C/Users/user/Documents/Projects/gradeaccessangular/app/templates/parent.html",
+		"/C/Users/user/Desktop/GRADE ACCESS/modif/admin/bower.json",
+		"/C/Users/user/Documents/Projects/gradeaccess/includes/head.inc",
+		"/C/Users/user/Documents/Projects/gradeaccessangular/.bowerrc",
+		"/C/Users/user/Documents/Projects/gradeaccessangular/js/app.js",
+		"/C/Users/user/Documents/Projects/gradeaccessangular/index.html",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/vendor/autoload.php",
+		"/C/Users/user/AppData/Local/Temp/fz3temp-1/registry.inc",
+		"/C/Users/user/Documents/Projects/gradeaccess/includes/footer.inc",
+		"/C/Users/user/Documents/Projects/gradeaccess/includes/teacher/footer.inc",
+		"/C/Users/user/Documents/Projects/gradeaccess/includes/teacher/main_nav.inc",
+		"/C/Users/user/Documents/Projects/gradeaccess/css/skins/palette.css",
+		"/C/Users/user/Documents/Projects/gradeaccess/includes/nav_footer.inc",
+		"/C/Users/user/Documents/Projects/gradeaccess/css/gradeaccess.css",
+		"/C/Users/user/Documents/Projects/gradeaccess/modules/teacher/mark_att",
+		"/C/Users/user/AppData/Local/Temp/Rar$DI27.418/app.js",
+		"/C/Users/user/Documents/Projects/sublime/Admin/js/animated.js",
+		"/C/Users/user/Documents/Projects/lulihub.com/wp-includes/js/admin-bar.js",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/includes/connect.inc",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/includes/registry.inc",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/controller/teacher/index.php",
+		"/C/Users/user/Documents/Projects/gradeaccessOOP/t_index.php",
+		"/C/Users/user/Documents/Projects/prestashop/classes/order/Order.php",
+		"/C/Users/user/Documents/Projects/prestashop/classes/Customer.php",
+		"/C/Users/user/Documents/Projects/prestashop/classes/PrestaShopAutoload.php",
+		"/C/Users/user/Documents/Projects/prestashop/classes/cache/Cache.php",
+		"/C/Users/user/Documents/Projects/prestashop/classes/tree/ITreeToolbar.php",
+		"/C/Users/user/Documents/Projects/prestashop/webservice/dispatcher.php",
+		"/C/Users/user/Desktop/GRADE ACCESS/modif/admin/dist/404.html",
+		"/C/Users/user/Desktop/GRADE ACCESS/modif/admin/app/styles/less/sublime.less",
+		"/C/Users/user/Desktop/GRADE ACCESS/modif/admin/app/styles/feather.css",
+		"/C/Users/user/Desktop/GRADE ACCESS/modif/admin/.yo-rc.json",
+		"/C/Users/user/Documents/Projects/RealWork/signup.php",
+		"/C/Users/user/Documents/Projects/RealWork/signin.php",
+		"/C/Users/user/Documents/Projects/RealWork/includes/parent/header.inc",
+		"/C/Users/user/Documents/Projects/RealWork/includes/teacher/header.inc",
+		"/C/Users/user/Documents/Projects/RealWork/js/table-edit-set-scores.js",
+		"/C/Users/user/Documents/Projects/RealWork/includes/registry.inc",
+		"/C/Users/user/Documents/Projects/RealWork/process/workers/ajax_set_scores.php",
+		"/C/Users/user/Documents/Projects/RealWork/css/gradeaccess.css",
+		"/C/Users/user/Documents/Projects/RealWork/process/workers/ajax_chat.php",
+		"/C/Users/user/Documents/Projects/RealWork/modules/parent/chat_panel",
+		"/C/Users/user/Documents/Projects/RealWork/modules/teacher/chat_panel",
+		"/C/Users/user/Documents/Projects/RealWork/composer.lock",
+		"/C/Users/user/Documents/Projects/RealWork/composer.json",
+		"/C/Users/user/Desktop/GRADE ACCESS/modif/admin/app/404.html",
+		"/C/Users/user/Documents/Projects/RealWork/t_set_scores.php",
+		"/C/Users/user/Documents/Projects/RealWork/plugins/datatables/jquery.dataTables.js",
+		"/C/Users/user/Documents/Projects/RealWork/js/ajax-chat-check-notif.js",
+		"/C/Users/user/Documents/Projects/RealWork/js/ajax-chat.js",
+		"/C/Users/user/Documents/Projects/RealWork/includes/head.inc",
+		"/C/Users/user/Desktop/BUILDING MART/csv/product_2015-07-30_185308.csv",
+		"/C/Users/user/Desktop/BUILDING MART/product_2015-07-30_161333.csv",
+		"/C/Users/user/Desktop/BUILDING MART/category_2015-07-30_161351.csv",
+		"/C/Users/user/AppData/Roaming/Sublime Text 3/Packages/User/sftp_servers/buildingmart godaddy",
+		"/C/Users/user/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/C/Users/user/AppData/Roaming/Sublime Text 3/Packages/SFTP/SFTP.sublime-settings",
+		"/C/Users/user/Documents/Projects/woo/index.php",
+		"/C/Users/user/Documents/Projects/RealWork/includes/footer.inc",
+		"/C/Users/user/Documents/Projects/RealWork/includes/admin/footer.inc",
+		"/C/Users/user/Documents/Projects/RealWork/includes/teacher/footer.inc",
+		"/C/Users/user/Documents/Projects/RealWork/includes/parent/footer.inc",
+		"/C/Users/user/Documents/Projects/RealWork/includes/nav_footer.inc",
+		"/C/Users/user/Documents/Projects/RealWork/modules/parent/index",
+		"/C/Users/user/Documents/Projects/RealWork/modules/parent/behaviours",
+		"/C/Users/user/Documents/Projects/RealWork/includes/parent/main_nav.inc",
+		"/C/Users/user/Documents/Projects/RealWork/process/forms/process_ch_pass.php",
+		"/C/Users/user/Documents/Projects/RealWork/process/forms/signup.php",
+		"/C/Users/user/Documents/Projects/RealWork/js/dashboard.js"
+	],
+	"find":
+	{
+		"height": 55.0
+	},
+	"find_in_files":
+	{
+		"height": 157.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			".php",
+			"main-navigation",
+			"fffix",
+			"de",
+			"black",
+			".toggle-acc",
+			"fff",
+			".nav-title",
+			".sidebar a",
+			".sidebar a, .sidebar .nav-title",
+			".sidebar a:hover, .sidebar .nav-title:hover",
+			"fndraw",
+			"b",
+			"error"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			".html"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 55.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.sftp":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "index.sublime-project",
+	"replace":
+	{
+		"height": 106.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"C:\\Users\\user\\Documents\\Projects\\gradeaccess\\includes\\gphponedb.sublime-workspace"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 294.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

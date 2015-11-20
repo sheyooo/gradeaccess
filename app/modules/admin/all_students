@@ -1,0 +1,73 @@
+<section class="main-content">
+
+    <!-- content wrapper -->
+    <div class="content-wrap">
+
+        <!-- inner content wrapper -->
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-xs-12">
+                    <section class="panel panel-default material-shadow">
+                        <header class="panel-heading">ALL STUDENTS</header>
+                        <div class="panel-body">
+
+                            <div class="table-responsive no-border">
+                                <table class="table table-hover table-bordered mg-t datatable">
+                                    <thead>
+                                    <tr>
+                                        <th>NAME</th>
+                                        <th>CLASS</th>
+                                        <th>SEX</th>
+                                        <th>BEHAVIOUR</th>
+                                        <th>ATTENDANCE</th>
+                                        <th>AGE</th>
+                                    </tr>
+                                    </thead><b class="text-muted">Adjust the number of students to show at once</b>
+                                    <tbody>
+                                    <?php
+
+                                    $students = $school->getAllStudentsID();
+                                    $html = null;
+                                    
+
+                                    foreach ($students as $id) {
+                                        $student = new Student($id);
+                                        $user_student = new User($id);
+                                        $class = $student->getClass();
+
+
+                                        if ($student->getAttendance(Tools::getCurrentDateAttendance())) {
+                                            $td_today = "<td class='success'> Present </td>";
+                                        } else {
+                                            $td_today = "<td class='danger'> Absent </td>";
+                                        };                                  
+
+
+                                        $html .= "<tr>";
+                                        $html .= "<td> {$user_student->getFullName()} </td>";
+                                        $html .= "<td> {$class['class']} {$class['arm']} </td> ";
+                                        $html .= "<td class='text-capitalize'> {$student->getSex()} </td>";
+                                        $html .= "<td> {$student->getLastBehaviour()['behaviour']} </td>";
+                                        $html .= $td_today;
+                                        $html .= "<td> {$student->getAge()} </td>";
+
+                                        $html .= "</tr>";
+                                        
+                                    }
+                                    echo $html;
+                                    ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <!-- /inner content wrapper -->
+    </div>
+    <!-- /content wrapper -->
+    <?php include("includes/user/footer.inc"); ?>
+    <a class="exit-offscreen"></a>
+</section>
+

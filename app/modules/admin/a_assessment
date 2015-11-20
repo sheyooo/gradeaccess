@@ -1,0 +1,164 @@
+<?php
+
+$sessions = $school->getAllSessions();
+$terms = $school->getAllTerms();
+?>
+
+
+<section class="main-content">
+
+    <!-- content wrapper -->
+    <div class="content-wrap">
+
+        <!-- inner content wrapper -->
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-xs-12">
+                    <section class="panel material-shadow" id="print-area">
+                        <div class="panel-heading clearfix">
+                            <div class="col-lg-2 col-xs-12">
+                                <?php 
+                                if (Tools::valueGet("term") AND Tools::valueGet("year")) {
+                                    echo "<b>{$terms[$_GET['term']]['nice_name']}</b> of <b>{$_GET['year']}</b> Session";
+                                } else {                                    
+                                    echo "<b>{$terms[$school->getCurrentTermID()]['nice_name']}</b> of the <b>{$school->getCurrentSession()}</b> Session";
+                                    //print_r($terms);
+                                } ?>
+                            </div>
+
+                            <form class="form-horizontal hidden-print" method="get" action="a_assessment.php" role="form">
+                                <label for="year" class="control-label col-lg-1 col-xs-2 col-xs-offset-0">YEAR: </label>
+
+                                <div class="col-lg-2 col-xs-10">
+                                    <select name="year" id="year" class="form-control">
+                                        <?php
+                                        foreach ($sessions as $key => $value) {
+                                            $select = "";
+
+                                            if(Tools::valueGet("year")) {
+                                                if (Tools::valueGet("year") == $value) {
+                                                    $select = "selected";
+                                                }
+                                            } else{
+                                                if($school->getCurrentSession() == $value){
+                                                    $select = "selected";
+                                                }
+                                            };
+                                            echo "<option {$select} value=\"{$value}\">{$value} SESSION</option> \n";
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
+
+                                <label for="term" class="control-label col-lg-1 col-xs-2">TERM: </label>
+
+                                <div class="col-lg-3 col-xs-10">
+                                    <select name="term" id="term" class="form-control">
+                                        <?php
+                                        
+                                        foreach ($terms as $x => $value) {
+                                            $select = "";
+
+                                            if (Tools::valueGet("tern")) {
+                                                Tools::valueGet("term") == $x ? $select = "selected" : null;
+                                            }else {
+                                                $school->getCurrentTermID() == $x ? $select = "selected" : null;
+                                            };
+                                            echo "<option {$select} value=\"{$x}\">{$value['nice_name']}</option> \n";
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
+                                <div class="col-lg-2 col-xs-12">                                    
+                                        <button type="submit" class="btn btn-primary form-control">FIND</button>
+                                </div>
+                            </form>
+                                <div class="col-lg-1 col-xs-6 hidden-print hidden-xs">
+                                <button onclick="printContentByID('print-area')" class="btn btn-primary">
+                                        <i class="fa ti-printer"></i> &nbsp; PRINT
+                                    </button>
+                                </div>
+                            
+
+                            
+
+                        </div>
+                        <div class="panel-body">
+
+                            <div class="table-responsive no-border">
+                                <table class="table table-hover table-bordered mg-t datatable">
+                                    <thead>
+                                        <tr>
+                                            <th>REG NO.</th>
+                                            <th>STUDENT</th>
+                                            <th>CLASS</th>
+                                            <th>AVG %</th>
+                                            <th>Mathematics</th>
+                                            <th>English Language</th>
+                                        </tr>
+                                    </thead><b class="text-muted">Adjust the number of students to show at once</b>
+                                    <tbody>
+                                        <?php
+                                        $row_accum = null;
+                                        $students = $school->getAllStudentsID();
+
+                                        foreach ($students as $id) {
+                                            $student = new Student($id);
+                                            $user_student = new User($id);
+                                            $class = $student->getClass();
+                                            $ass_id = null;
+
+
+                                            if ($term = Tools::valueGet("term") AND $year = Tools::valueGet("year")) {
+
+                                                $ass_id = $student->getAssessmentId($year, $term);                                           
+                                            } else {
+                                                $ass_id = $student->getAssessmentId($school->getCurrentSession(), $school->getCurrentTermID());
+
+                                            }
+
+                                            if ($ass_id) {
+                                                $assessment = new Assessment($ass_id);
+
+                                                $average = $assessment->getAverage();
+                                                if ($average <= 50) {
+                                                    $row_accum .= "<tr class=\"danger\">";
+                                                } else {
+                                                    $row_accum .= "<tr>";
+                                                }
+
+                                                $scores = $assessment->getScores();
+
+                                                $row_accum .= "<td> {$student->getFields()['reg_no']} </td> ";
+                                                $row_accum .= "<td> {$user_student->getFullName()} </td>";
+                                                $row_accum .= "<td> {$class['class']} {$class['arm']} </td>";
+                                                $row_accum .= "<td> {$average} </td>";
+                                                $row_accum .= "<td> {$scores[1]['score']} </td>";
+                                                $row_accum .= "<td> {$scores[2]['score']} </td>";
+
+                                                $row_accum .= "</tr>";
+                                                
+                                                
+                                            }
+                                        }
+
+                                        echo $row_accum;
+
+
+
+
+                                        ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <!-- /inner content wrapper -->
+    </div>
+    <!-- /content wrapper -->
+    <?php include("includes/user/footer.inc"); ?>
+    <a class="exit-offscreen"></a>
+</section>

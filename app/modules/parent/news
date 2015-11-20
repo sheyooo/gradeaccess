@@ -1,0 +1,15 @@
+<section class="main-content" style="height: 100%;">
+
+    <!-- content wrapper -->
+    <div class="content-wrap ">
+
+        <!-- inner content wrapper -->
+        <div class="wrapper">
+            <?php include(__DIR__ . "/../user/fragments/main_content_news.php"); ?>
+        </div>
+        <!-- /inner content wrapper -->
+    </div>
+    <!-- /content wrapper -->
+    <?php include("includes/user/footer.inc"); ?>
+    <a class="exit-offscreen"></a>
+</section>

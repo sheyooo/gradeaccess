@@ -1,0 +1,89 @@
+<?php
+$html = null;
+
+if($chat){
+    $messages = $chat->getMessages();
+    $user->clearChatNotification($chat->getID());
+
+    if($messages){
+        foreach($messages as $key => $message) {
+            $sender = null;        
+            $time = strtotime($message['time']);
+            
+
+            if ($message['from_user_id'] == $user->getID()) {
+                $html .= "<div id=\"{$message['message_id']}\" class=\"chatbox-user\">
+                            <a href=\"javascript:;\" class=\"chat-avatar pull-left\"> 
+                            <img src=\"{$user->getProfilePictureURL()}\" class=\"img-circle img-thumbnail\" title=\"user name\" alt=\"\">
+                        </a>";
+
+                $panel_heading_if_sender = "";
+            } else {
+                $sender = new User($message['from_user_id']);
+                $html .= "<div id=\"{$message['message_id']}\" class=\"chatbox-user right\">
+                            <a href=\"javascript:;\" class=\"chat-avatar pull-right\">
+                            <img src=\"{$sender->getProfilePictureURL()}\" class=\"img-circle img-thumbnail\" title=\"user name\" alt=\"\">
+                        </a>";
+
+                
+                $panel_heading_if_sender ="<div class=\"panel-heading\">
+                                            {$sender->getFullName()}
+                                        </div>";
+            };
+
+            $html .= "<div class=\"message\">
+                            <div class=\"panel\">
+                            
+                                {$panel_heading_if_sender}
+                            
+                                <div class=\"panel-body material-shadow\">
+                                    <p>{$message['message']}</p>
+                                </div>
+                            </div>
+                            <small class=\"chat-time\">
+                                <i class=\"ti-time mr5\"></i>
+                                <span data-livestamp=\"{$time}\"></span>
+                                <i class=\"ti-check text-success\"></i>
+                            </small>
+                        </div>";
+            $html .= "</div>";
+        };
+    }
+}
+?>
+
+<section class="main-content">
+
+    <!-- content wrapper -->
+    <div class="content-wrap">
+
+        <!-- inner content wrapper -->
+        <div class="wrapper">
+            <?php echo "
+                        <div id=\"chat_id\" data-ch-id=\"{$chat->getID()}\"
+                        data-last-mes=\"{$chat->getLastMessage()['message_id']}\" class=\"chat-box\">
+                            {$html}
+                        </div>
+                    ";
+                 
+            ?>
+        </div>
+        <!-- /inner content wrapper -->
+
+    </div>
+    <!-- /content wrapper -->
+
+    <footer class="bt">
+        <div class="form-input clearfix mt10 mb10">
+            <div class="input-group">
+                <input id="chat-box" type="text" class="form-control input-lg" placeholder="Say Something ..." autofocus >
+                <span class="input-group-btn">
+                    <button id="chat-send" class="btn btn-default btn-lg" type="button"><i class="ti-arrow-right"></i>
+                    </button>
+                </span>
+            </div>
+        </div>
+    </footer>
+
+    <a class="exit-offscreen"></a>
+</section>

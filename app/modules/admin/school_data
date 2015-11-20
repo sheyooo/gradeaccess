@@ -1,0 +1,173 @@
+<?php
+if ($teachers = $school->getUnnauthorizedTeachersID()) {
+    $html_teachers = null;
+    foreach($teachers as $id){
+        $user_teacher = new User($id);
+        $html_teachers .= "<a class=\"btn btn-danger btn-block\" href=\"a_activate_staff.php\">
+                            {$user_teacher->getFullName()}
+                        </a>";
+}
+
+} else {
+    $html_teachers = "<a class=\"btn btn-success btn-block\" href=\"javascript:;\">All Teachers are activated</a>";
+}
+?>
+<section class="main-content">
+
+    <div class="content-wrap">
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="col-xs-12">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <div class="text-center">
+                                    <b>INNACTIVE STAFF</b>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <?php echo $html_teachers; ?>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-xs-12">
+                        <?php
+                        include(__DIR__ . "/../user/fragments/newsletter_tile.php");
+                        ?>
+                    </div>
+
+                </div>
+
+
+
+
+                <div class="col-lg-8 col-xs-12">
+                    <?php
+                    /*SCHOOL DATA*/
+                    $fields = $school->getFields();
+
+                    /*TERMS*/
+                    $terms = $school->getAllTerms();
+                    ?>
+
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <div class="text-center">
+                                <b>SCHOOL INFORMATION</b>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                        <?php 
+                            if(Tools::valueGet("status") == 1){
+                                echo "<div class=\"alert alert-success text-center\">Saved</div>";
+                            }elseif(Tools::valueGet("status") == 2){
+                                echo "<div class=\"alert alert-danger text-center\">No field should be left empty</div>";
+                            }
+                        ?>
+                            <form class="form-horizontal" role="form" method="post" action="process/forms/school_data.php">
+
+                                <div class="form-group">
+                                    <label for="current_session" class="col-sm-3 control-label">Current Session</label>
+                                    <div class="col-sm-3">
+                                        <input <?php echo "value=\"{$fields['current_session']}\"" ?> type="text" class="form-control" name="current_session" placeholder="2014/2015">
+                                    </div>
+
+                                    <label for="current_term" class="col-sm-3 control-label">Current Term</label>
+                                    <div class="col-sm-3">
+                                        <select name="current_term" id="current_term" class="form-control">
+                                            <?php
+                                            $arrlength = count($terms);
+
+                                            foreach ($terms as $x => $term) {
+                                                $select = "";
+                                                if (isset($fields['current_term'])) {
+                                                    $school->getCurrentTermID() == $x ? $select = "selected" : null;
+                                                };
+                                                echo "<option {$select} value=\"$x\">{$term['nice_name']}</option>";
+                                            }
+                                            ?>
+                                        </select>
+                                    </div>
+                                </div>
+                                <hr>
+
+                                <div class="form-group">
+                                    <label for="sch_name" class="col-sm-2 control-label">School Name</label>
+                                    <div class="col-sm-10">
+                                        <input <?php echo "value=\"{$fields['sch_name']}\"" ?> type="text" class="form-control" name="sch_name" placeholder="GreenSprings International Schools">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="sch_phone" class="col-sm-2 control-label">Telephone</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" <?php echo "value=\"{$fields['sch_phone']}\"" ?> class="form-control" name="sch_phone" placeholder="01-896 7898">
+                                    </div>
+                                </div>
+                                <hr>
+
+                                <div class="form-group">
+                                    <label for="owner" class="col-sm-3 control-label">Name of School Overseer</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" <?php echo "value=\"{$fields['owner']}\"" ?> class="form-control" name="owner" placeholder="Mr. Agbaje Martins">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="owner_rank" class="col-sm-3 control-label">Title of Overseer</label>
+                                    <div class="col-sm-9">
+                                        <input <?php echo "value=\"{$fields['owner_rank']}\"" ?> type="text" class="form-control" name="owner_rank" placeholder="Administrator or Principal">
+                                    </div>
+                                </div>
+                                <hr>
+
+                                <div class="form-group">
+                                    <label for="assistant" class="col-sm-3 control-label">Name of Assistant</label>
+                                    <div class="col-sm-9">
+                                        <input <?php echo "value=\"{$fields['assistant']}\"" ?> type="text" class="form-control" name="assistant" placeholder="Mrs. Ada Lokengo">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="assistant_rank" class="col-sm-3 control-label">Title of Assistant</label>
+                                    <div class="col-sm-9">
+                                        <input <?php echo "value=\"{$fields['assistant_rank']}\"" ?> type="text" class="form-control" name="assistant_rank" placeholder="e.g. Vice Principal">
+                                    </div>
+                                </div>
+                                <hr>
+
+                                <div class="form-group">
+                                    <label for="location" class="col-sm-2 control-label">Location</label>
+                                    <div class="col-sm-10">
+                                        <input <?php echo "value=\"{$fields['location']}\"" ?> type="text" class="form-control" name="location" placeholder="1441, Maryland, Lagos, Nigeria">
+                                    </div>
+                                </div>
+
+
+
+
+
+                                <div class="form-group">
+                                    <div class="col-sm-offset-5 col-sm-2">
+                                        <button type="submit" class="btn btn-primary">Save ...</button>
+                                    </div>
+                                </div>
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+
+    <?php include("includes/user/footer.inc"); ?>
+
+    <a class="exit-offscreen"></a>
+</section>

@@ -1,0 +1,56 @@
+<?php
+    $student = new Student($profile->getID());
+    $sub_profile_html = "
+<div class=\"text-muted text-center panel material-shadow \">
+<div class=\"panel-body\">
+    <h4 class=\"no-m\">
+        No behaviour recorded yet
+    </h4>
+</div>
+</div> ";
+
+    
+
+    if($behaviours = $student->getBehaviours())
+        $sub_profile_html = "<div class=\"panel\">";
+        $sub_profile_html .= "<div class=\"panel-body\">";
+        //print_r($behaviours);
+
+        foreach ($behaviours as $behaviour_row) {
+            $observer = new User($behaviour_row['observer']);
+            if($behaviour_row['behaviour_stat']){
+                $color = "text-success";
+            }else{
+                $color = "text-danger";
+            }
+
+
+            $sub_profile_html .= "
+            <div class=\"panel\">
+                
+                <div class=\"panel-body no-p\">
+                    <p>{$behaviour_row['behaviour']} <i class=\"fa fa-circle {$color} pull-right\"></i></p>
+                    <p class=\"pull-right\"> -{$observer->getFullName()}</p>
+                </div>
+            </div>";
+        }
+
+        $sub_profile_html .= "</div>";
+        $sub_profile_html .= "</div>";
+
+
+?>
+
+<div class=""> 
+
+    <div class="text-muted text-center panel material-shadow ">
+        <div class="panel-body">
+            <h4 class="no-m"><b>
+                Recent comments about <?php echo $profile->getFullName() ?></b>
+            </h4>
+        </div>
+    </div> 
+
+    <?php echo $sub_profile_html ?>
+    
+</div>

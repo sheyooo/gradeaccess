@@ -1,0 +1,81 @@
+<?php
+    $class_select_options = "";
+    $html = "";
+    $success_message = "";
+
+    if(Tools::valueGet("status") == 1){
+        $success_message = "<div class=\"alert alert-success text-center bold center-block text-success\">You have successfully assigned teachers to their new classes</div>";
+    }
+
+    
+
+    if($teachers = $school->getAllTeachersID()){
+        $classes = $school->getClassesID();
+
+        foreach($teachers as $id){
+            $user_teacher = new User($id);
+            $teacher = new Teacher($id);
+            $class_select_options = "<option value=\"0\">NO CLASS ASSIGNED</option>";
+            
+
+            foreach($classes as $id){
+                $select = "";
+                //echo count($all_classes);
+                if($teacher->getClassID() == $id){
+                    $select = "selected";
+                };
+                $class = new SchoolClass($id);
+                $class_select_options .= "<option {$select} value=\"{$id}\">{$class->getClassName()}</option>";
+            };
+
+
+            $html .= "<tr>
+                        <td>{$user_teacher->getFullName()}</td>
+                        <td>
+                            <select name=\"select[{$user_teacher->getID()}]\">
+                                {$class_select_options}
+                            </select>
+                        </td>
+                    </tr>";
+        }
+    };
+
+?>
+<section class="main-content">
+
+    <div class="content-wrap">
+        <div class="wrapper">
+            <div class="panel no-p col-xs-12 col-lg-10 col-lg-offset-1 material-shadow">
+
+                <div class="panel-heading text-center">
+                    Assign your teachers to classes as class teachers
+                </div>
+
+                <div class="panel-body">
+                    <form method="POST" action="process/forms/assign_teachers.php">
+                        <?php echo $success_message; ?>
+
+                        <table class="table table-bordered table-hover text-center">
+                            <thead>
+                                <th class="text-center">TEACHER</th>
+                                <th class="text-center">ASSIGNED CLASS</th>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td colspan="2">
+                                        <button type="submit" class="btn btn-success col-xs-12"><i class="fa fa-check-circle"></i> Click here to Submit When Done</button>
+                                    </td>
+                                </tr>
+                                <?php echo $html; ?>
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <?php include("includes/user/footer.inc"); ?>
+
+    <a class="exit-offscreen"></a>
+</section>

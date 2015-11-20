@@ -1,0 +1,34 @@
+<section class="main-content">
+
+    <!-- content wrapper -->
+    <div class="content-wrap ">
+
+        <!-- inner content wrapper -->
+        <div class="wrapper" style="height: 100%;">
+        <?php
+        $rules = "No rules uploaded yet";
+
+            if($school->getRules()){
+                $rules = $school->getRules();
+            }
+        ?>
+        
+            <section class="panel panel-default">
+                <div class="panel-heading">
+                        <h4 class="text-center"> SCHOOL RULES AND REGULATIONS </h4>
+                </div>
+                <div class="panel-body" style="height: 100%;">
+                    <div class="col-xs-12">
+                        <?php echo $rules ?>
+                    </div>
+
+                </div>
+            </section>
+
+        </div>
+        <!-- /inner content wrapper -->
+    </div>
+    <!-- /content wrapper -->
+    <?php include("includes/user/footer.inc"); ?>
+    <a class="exit-offscreen"></a>
+</section>

@@ -1,0 +1,20 @@
+<section class="main-content">
+
+    <div class="content-wrap">
+    <div class="wrapper">
+            <div class="text-muted">                
+                <h1 class="text-center">
+                    <strong class="text-center text-uppercase">YOUR ACCOUNT HAS BEEN UNAUTHORIZED BY THE ADMIN</strong><br>
+                    <h1 class="text-center"><i class="fa fa-exclamation-circle fa-4x"></i></h1><br>           
+                </h1><br>
+                <p class="text-center">If this was a mistake, please contact the school admin to get this issue resolved.</p>
+                <p class="text-center">Or not <a href="signout.php">Logout</a></p>
+
+            </div>
+
+        </div>
+    </div>
+    <?php include("includes/user/footer.inc"); ?>
+    <a class="exit-offscreen"></a>
+</section>
+

@@ -1,0 +1,67 @@
+<?php
+$parent = new ParentClass($profile->getID());
+if($psu_check = $parent->getStudentsID()){
+    $students = $parent->getStudentsID();
+}
+    //print_r($students);
+$sub_profile_html = "
+<div class=\"text-muted text-center panel material-shadow \">
+<div class=\"panel-body\">
+    <h4 class=\"no-m\">
+        No child has been linked to this account
+    </h4>
+</div>
+</div> ";
+
+if($psu_check){
+    $sub_profile_html = "";
+
+if($students){
+
+foreach ($students as $id) {
+    $s = new Student($id);
+    $s_u = new User($id);
+    if($s->getAttendance(Tools::getCurrentDateAttendance())){
+        $att = "Present";
+    }else{
+        $att = "Not present";
+    }
+
+    $class = $s->getClass();
+
+    $sub_profile_html .= "
+    <section class=\"widget bg-primary material-shadow \">
+        <div class=\"widget-body\">
+            <a href=\"profile.php?guid={$id}\" class=\"pull-left mr15\">
+                <img src=\"{$s_u->getProfilePictureURL()}\" class=\"avatar avatar-md img-circle\" alt=\"\">
+            </a>
+
+            <div class=\"overflow-hidden\">
+                <div>
+                    <small class=\"pull-right\">STUDENT</small>
+                    <b>{$s_u->getFullName()}</b>
+                </div>
+                <small class=\"show\">{$class['class']} {$class['arm']}</small>
+                <small class=\"show\">{$att}</small>
+            </div>
+        </div>
+    </section>";
+}
+}
+}
+
+
+?>
+
+<div class="">
+    <div class="text-muted text-center panel material-shadow ">
+        <div class="panel-body">
+            <h4 class="no-m"><b>
+                Children linked to <?php echo $profile->getFullName() ?></b>
+            </h4>
+        </div>
+    </div> 
+
+    <?php echo $sub_profile_html ?>
+    
+</div>

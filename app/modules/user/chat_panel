@@ -1,0 +1,70 @@
+<?php
+    $contacts = null;
+    
+    if ($user_ids = $user->getSuggestedChatUsers()){
+        foreach ($user_ids as $user_id) {
+
+            $ch_user = new User($user_id);
+
+            $status;
+            $color;
+            
+            /*CHECK IF THEY ARE ONLINE*/            
+            if($ch_user->isOnline()){
+                $status = "online";
+                $color = "success";
+            }else{
+                $status = "offline";
+                $color = "default";
+            };            
+
+            $contacts .= "<div class=\"chat-user\">
+                            
+                            <a href=\"profile.php?guid={$ch_user->getID()}\">
+                                <div class=\"user-avatar pull-right\">
+                                    <img src=\"{$ch_user->getProfilePictureURL()}\" class=\"img-circle\" alt=\"{$ch_user->getFullName()}\">
+                                    <div class=\"status bg-{$color}\"></div>
+                                </div>
+                            </a>
+                            <a href=\"message.php?user={$ch_user->getID()}\">
+                            <div class=\"user-details\" >
+                                <p> {$ch_user->getFullName()}  </p>
+                                <small class=\"user-department\">
+                                    <span class=\"badge bg-primary rounded text-uppercase\">
+                                     {$ch_user->getType()} 
+                                    </span> 
+                                </small>
+                            </div>
+                            </a>
+                        </div>";
+        }
+    }
+    
+?>
+
+<aside class="chat-sidebar offscreen-right bg-white">
+    <div class="content-wrap">
+        <div class="wrapper">
+            <div class="slimscroll" data-height="auto" data-size="6px" data-distance="0">
+
+                <div class="pt15 pl15 pr15 pb0 clearfix">
+                    <h3 class="mt0">
+                        <span class="small">
+                            <small>YOU'RE ONLINE</small>
+                            <i class="fa fa-circle text-success"></i>                            
+                        </span>
+                    </h3>
+                </div>
+
+                <div class="pt15 pl15 pr15 pb0">
+                    <div class="h6 text-muted"><b>DIRECTORY</b>
+                    </div>
+                </div>
+
+                <?php echo($contacts); ?>
+
+            </div>
+        </div>
+    </div>
+
+</aside>

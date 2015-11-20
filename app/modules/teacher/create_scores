@@ -1,0 +1,68 @@
+<?php
+    $command = "SELECT subjects_offered FROM class
+                WHERE class_id = {$_SESSION['my_class']}";
+    $result = mysqli_query($conn, $command) or die();
+    $row =  mysqli_fetch_assoc($result);
+    $subj_arr = explode(",", $row['subjects_offered']);
+
+    $commando = "SELECT available_subjects FROM school_data";
+    $resulto = mysqli_query($conn, $commando) or die();
+    $row_avail =  mysqli_fetch_assoc($resulto);
+    $avail_subj = explode(",", $row_avail['available_subjects']);
+?>
+
+<!--suppress ALL -->
+<section class="main-content">
+
+    <!-- content wrapper -->
+    <div class="content-wrap">
+
+        <!-- inner content wrapper -->
+        <div class="wrapper">
+            <div class="row">
+                <div class=" col-xs-12">
+                    <section class="panel panel-default">
+                        <header class="panel-heading">ADD OR REMOVE SUBJECTS OFFERED IN YOUR CLASS</header>
+                        <div class="panel-body">
+                            <div class="table-responsive no-border">
+                                <table class="table mg-t text-center">
+                                    <thead>
+                                    <tr>
+                                        <th class="text-center">CURRENTLY BEING OFFERED</th>
+                                        <th class="text-center"> &nbsp; </th>
+                                        <th class="text-center">AVAILABLE SUBJECTS</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <?php
+                                        $row_accum = null;
+                                        for($i = 0; $i < count($avail_subj); $i++) {
+
+                                            $row_accum .= "<tr>";
+                                                if(isset($subj_arr[$i])) {
+                                                    $row_accum .= "<td><a class=\"btn btn-success\" href=\"\">{$subj_arr[$i]}</a>  </td> ";
+                                                } else{
+                                                    $row_accum .= "<td class=\"\">  </td> ";
+                                                }
+                                            $row_accum .= "<td> <i class=\"ti-arrows-horizontal\"></i></td>";
+                                            $row_accum .= "<td> <a class=\"btn btn-warning\" href=\"\">{$avail_subj[$i]}</a></td>";
+                                            $row_accum .= "</tr>";
+                                        }
+                                        echo $row_accum;
+                                    ?>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+        <!-- /inner content wrapper -->
+    </div>
+    <!-- /content wrapper -->
+    <?php include("includes/user/footer.inc"); ?>
+    <a class="exit-offscreen"></a>
+</section>

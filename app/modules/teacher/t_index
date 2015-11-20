@@ -1,0 +1,93 @@
+<?php
+
+    //$work = 0;
+    $behaviour_panel = null;
+    $pan_col = "success";
+    $check = "checked";
+    
+    if($class_check)
+        $ids = $class->getStudentsID();
+
+        if($ids){
+        foreach ($ids as $id) {
+            $behaviour = "";
+            $type = null;
+
+            $student = new Student($id);
+            $user_student = new User($id);
+
+            if ($beh = $student->getLastBehaviour()) {
+
+                $behaviour = $beh['behaviour'];
+                $type = $beh['type'];
+
+                if (!$type) {
+                    $pan_col = "danger";
+                    $check = "";
+                } else {
+                    $pan_col = "success";
+                    $check = "checked";
+                };
+            }else{
+
+            }
+
+            
+
+
+            $behaviour_panel .= "
+            <div class=\"col-xs-12 col-lg-6\">
+                <section id =\"behaviour_panel{$user_student->getID()}\" class=\"panel panel-{$pan_col}\">
+                    <div class=\"panel-heading text-center p5\">
+                        <h3 class=\"text-uppercase m5\">{$user_student->getFullName()}</h3>
+                    </div>
+                    <div class=\"panel-body\">
+                        <form name=\"ajax_behaviour_form\">
+                            <div class=\"col-xs-12 col-lg-10 \">
+                                <input id=\"input{$user_student->getID()}\" placeholder=\"Behaviour status of the student.\" class=\"form-control\" type=\"text\" value=\"{$behaviour}\" />
+                            </div>
+
+                            <div class=\"col-xs-12 col-lg-2 no-p\">
+                                <div class=\"col-xs-12\">
+                                    <input id=\"check{$user_student->getID()}\" type=\"checkbox\" class=\"bSwitch\" {$check} >
+                                </div>
+                            </div>
+
+                    </div>
+                    <div class=\"panel-footer\">
+
+                        <div class=\"col-lg-6 col-xs-12\">{$user_student->getFullName()}</div>
+                        <div class=\"col-lg-5 col-xs-12 pull-right\">
+                            <a id=\"{$user_student->getID()}\" href=\"javascript:;\" role=\"button\" class=\"btn btn-{$pan_col} btn-sm ajax_behaviour col-xs-12\" data-loading-text=\"Updating ...\">
+                                <i class=\"ti-reload mr5\"></i>Update</a>
+                        </div>
+
+                        </form>
+                         &nbsp;<br>
+                         &nbsp;
+                    </div>
+                </section>
+            </div>
+        ";
+        }
+    } else{
+        $behaviour_panel = "<h2 class=\" text-center text-center\">NO STUDENTS TO EDIT</h2>";
+    }
+
+
+
+
+?>
+<section class="main-content">
+
+    <div class="content-wrap">
+        <div class="wrapper"> 
+
+            <?php echo $behaviour_panel; ?>
+            
+        </div>
+    </div>
+    <?php include("includes/user/footer.inc"); ?>
+    <a class="exit-offscreen"></a>
+</section>
+

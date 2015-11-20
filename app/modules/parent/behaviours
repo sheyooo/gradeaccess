@@ -1,0 +1,99 @@
+<?php
+
+    $html = null;
+
+    if($psu_check){
+        if($student->getLastBehaviour()){
+            $behaviours = $student->getBehaviours();
+            foreach ($behaviours as $behaviour_row) {
+                $time = $behaviour_row['time'];
+                $time = date("g:i A, d l, F Y", strtotime($time));
+                $observer_name = "";
+                if($observer = new User($behaviour_row['observer'])){
+                    $observer_name = $observer->getFullName();
+                }
+                $behaviour = $behaviour_row['behaviour'];
+
+                if($behaviour_row['behaviour_stat'] == 1){
+                    $color = "success";
+                    $icon = "fa-lg ti-check";
+                } else{
+                    $color = "danger";
+                    $icon = "fa-lg ti-close";
+                };
+
+                $html .= "<div class=\"timeline-panel\">
+                            <section class=\"panel\">
+
+                            <div class=\"timeline-date\">
+                            <span class=\"text-muted\">{$time}</span>
+                            <p class=\"\">Observed by {$observer_name}</p>
+                            </div>
+
+                                <div class=\"panel-body\">
+                                    <div class=\"text-center pull-right  text-{$color}\">
+                                        <i class=\"{$icon}\"></i>
+                                    </div>
+                                    <div class=\"\">
+                                        <i class=\"fa fa-circle text-{$color}\"></i>
+                                        <p>{$behaviour}</p>
+                                    </div>
+                                </div>
+                            </section>
+                            </div>";
+            }
+        }
+        else {
+        $color = "primary";
+        $time = "NO BEHAVIOUR RECORDED";
+        $type = "";
+        $behaviour = "IF YOU HAVE ADDED YOUR CHILD TO YOUR ACCOUNT, YOU CAN CHAT WITH YOUR CHILD'S CLASS TEACHER TO GET FEEDBACK";
+
+        $html = "<div class=\"text-muted\">                
+                    <h1 class=\"text-center\">
+                        <strong class=\"text-center text-uppercase\">No Behaviour Records</strong><br>
+                        <h1 class=\"text-center\"><i class=\"fa fa-binoculars fa-4x\"></i></h1><br>           
+                    </h1><br>
+                    <p class=\"text-center\">Have a chat with the class teacher to keep an eye on your child</p>
+
+                </div>";
+    
+    }   
+    } else{
+        $html = "<h4 class=\"text-center\">No child linked!</h4>";
+    }
+?>
+
+<section class="main-content">
+
+    <!-- content wrapper -->
+    <div class="content-wrap ">
+
+        <!-- inner content wrapper -->
+        <div class="wrapper" >
+            
+            <?php
+            if($psu_check){            
+                if($student->getLastBehaviour()){
+                    echo "<div class=\"timeline\">            
+                            <div class=\"timeline-heading\">
+                                Activity Timeline
+                            </div>";
+                    
+                            echo $html;                
+              
+                    echo "</div>";
+                }
+            }else{
+                echo $html;
+            }
+            
+            ?>
+        </div>
+
+        <!-- /inner content wrapper -->
+    </div>
+    <!-- /content wrapper -->
+    <?php include("includes/user/footer.inc"); ?>
+    <a class="exit-offscreen"></a>
+</section>

@@ -1,0 +1,114 @@
+<section class="main-content">
+
+    <!-- content wrapper -->
+    <div class="content-wrap">
+
+        <!-- inner content wrapper -->
+        <div class="wrapper">
+
+            <div class="col-xs-12 col-lg-6">
+                <section class="panel no-b material-shadow">
+                    <div class="panel-body">
+                        <a href="javascript:;" data-toggle="modal" data-target="#upload-pic" class="show text-center">
+                            <img src="<?php echo $profile->getProfilePictureURL() ?>" class="avatar avatar-lg img-circle" alt="<?php echo $profile->getFullName(); ?>">
+                        </a>
+
+                        <div class="show mt15 mb15 text-center row" style="vertical-align: bottom">
+
+                            <div class="col-xs-12 col-lg-3">
+                            <?php 
+                                if($profile->getType() == "student" AND $user->getType() != "student" AND !$me){
+                                    echo "<a href=\"javascript:;\" class=\"btn btn-primary btn-outline\" data-toggle=\"modal\" data-target=\"#add-behaviour\">Add behaviour </a>";
+                                }
+
+                            ?>
+                            </div>
+
+                            <div class="col-xs-12 col-lg-6">
+
+                                <div class="h5"><b><?php echo $profile->getFullName() ?></b></div>
+                                <p class="show text-muted text-uppercase"><?php echo $profile->getType() ?></p>
+                            </div>
+
+                            <div class="col-xs-12 col-lg-3">
+                            <?php 
+                                if($me){
+                                    echo "<a href=\"settings.php\" class=\"btn btn-primary btn-outline\" data-toggle=\"modal\" data-target=\"#edit-profile\"> Edit profile </a> ";
+                                }
+                            ?>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="panel-footer no-p no-b">
+                        <div class="row no-m bg-primary">
+                            <div class="col-md-12 col-lg-3 bg-primary p10 text-center brbl" style="height: 100%;">
+                                <a href="tel:<?php echo $profile->getPhone() ?>">
+                                    <span class="ti-mobile show mb5"></span>
+                                    Moblie: <?php echo $profile->getPhone() ?>
+                                </a>
+                            </div>
+                            <div class="col-md-12 col-lg-3 bg-info p10 text-center">
+                                <a href="javascript:;">
+                                    <span class="ti-comment show mb5"></span>
+                                    <?php echo count($profile->getChatsID()) ?> active discussions with other users
+                                </a>
+                            </div>
+                            <div class="col-md-12 col-lg-6 bg-primary p10 text-center brbr">
+                                <a href="javascript:;">
+                                    <span class="ti-eye show mb5 text-overflow"></span>
+                                    Last seen online <span data-livestamp="<?php echo $profile->lastSeen(); ?>"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="col-xs-12 col-lg-6">
+                <?php 
+                    if($profile->getType() == "parent"){
+                        include(__DIR__ . "/../parent/fragments/panel_student_stat_profile");
+                    }elseif($profile->getType() == "student"){
+                        include(__DIR__ . "/../student/fragments/panel_parent_stat_profile");
+                        include(__DIR__ . "/../student/fragments/panel_teacher_stat_profile");
+                    }elseif($profile->getType() == "teacher"){
+                        include(__DIR__ . "/../teacher/fragments/panel_teacher_stat_profile");
+                    }
+
+                ?>
+            </div>
+
+            <div class="col-xs-12 col-lg-6">
+                <?php 
+                    if($profile->getType() == "student"){
+                        include(__DIR__ . "/../student/fragments/panel_behaviour_stat_profile");
+                    }
+
+                ?>
+            </div>
+
+
+        </div>
+        <!-- /inner content wrapper -->
+
+    </div>
+    <!-- /content wrapper -->
+    
+
+    <?php
+    if($me){
+        include(__DIR__ . "/../user/fragments/upload_profile_pic_modal.php");
+    };
+    if($profile->getType() == "student" AND $user->getType() != "student" AND !$me){
+        include(__DIR__ . "/../user/fragments/add_behaviour_modal.php");
+    };
+    if($me){
+        include(__DIR__ . "/../user/fragments/edit_profile_modal.php");
+    };
+
+    include("includes/user/footer.inc") 
+    ?>
+
+    <a class="exit-offscreen"></a>
+</section>

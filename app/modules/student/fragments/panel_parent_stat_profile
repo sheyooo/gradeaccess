@@ -1,0 +1,63 @@
+<?php
+    $student = new Student($profile->getID());
+    $parents = $student->getParentsID();
+    //print_r($students);
+    $sub_profile_html = "
+<div class=\"text-muted text-center panel material-shadow \">
+<div class=\"panel-body\">
+    <h4 class=\"no-m\">
+        No parent has linked this child yet
+    </h4>
+</div>
+</div> ";
+
+    if($parents){
+        $sub_profile_html = "";
+    
+
+    foreach ($parents as $id) {
+        $p = new ParentClass($id);
+        $p_u = new User($id);
+
+        $start_chat_html = "";
+        if($id != $user->getID()){
+            $start_chat_html = "<small class=\"show\"><a href=\"message.php?user={$p_u->getID()}\">Discuss with {$p_u->getFirstNameWithTitle()}</a></small>";
+        }
+        
+
+        $sub_profile_html .= "
+        <section class=\"widget bg-primary material-shadow \" data-original-title=\"Tooltip on right\" data-toggle=\"tooltip\">
+                    <div class=\"widget-body\">
+                        <a href=\"profile.php?guid={$id}\" class=\"pull-left mr15\">
+                            <img src=\"{$p_u->getProfilePictureURL()}\" class=\"avatar avatar-md img-circle\" alt=\"\">
+                        </a>
+
+                        <div class=\"overflow-hidden\">
+                            <div>
+                                <small class=\"pull-right\">PARENT</small>
+                                <b>{$p_u->getFullName()}</b>
+                            </div>
+                            <small class=\"show\">Phone: <a href=\"tel:{$p_u->getPhone()}\"> {$p_u->getPhone()} </a></small>
+                            {$start_chat_html}
+                        </div>
+                    </div>
+                </section>";
+        }
+}
+
+
+?>
+
+<div class=""> 
+
+    <div class="text-muted text-center panel material-shadow ">
+        <div class="panel-body">
+            <h4 class="no-m"><b>
+                Parents of <?php echo $profile->getFullName() ?></b>
+            </h4>
+        </div>
+    </div> 
+
+    <?php echo $sub_profile_html ?>
+    
+</div>

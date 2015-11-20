@@ -1,0 +1,67 @@
+<?php
+    $student = new Student($profile->getID());
+    $class = new SchoolClass($student->getClassID());
+    $teachers = $class->getTeachersID();
+    //print_r($students);
+    $sub_profile_html = "
+<div class=\"text-muted text-center panel material-shadow \">
+<div class=\"panel-body\">
+    <h4 class=\"no-m\">
+        No class teacher assigned
+    </h4>
+</div>
+</div> ";
+
+    if($parents){
+        $sub_profile_html = "";
+    
+
+    foreach ($teachers as $id) {
+        $t = new Teacher($id);
+        $t_u = new User($id);
+
+        $start_chat_html = "";
+        if($id != $user->getID()){
+            $start_chat_html = "<small class=\"show\"><a href=\"message.php?user={$t_u->getID()}\">Discuss with {$t_u->getFirstNameWithTitle()}</a></small>";
+        }
+        
+
+        $sub_profile_html .= "
+        <section class=\"widget bg-primary material-shadow \" data-original-title=\"Tooltip on right\" data-toggle=\"tooltip\">
+                    <div class=\"widget-body\">
+                        <a href=\"profile.php?guid={$id}\" class=\"pull-left mr15\">
+                            <img src=\"{$t_u->getProfilePictureURL()}\" class=\"avatar avatar-md img-circle\" alt=\"\">
+                        </a>
+
+                        <div class=\"overflow-hidden\">
+                            <div>
+                                <small class=\"pull-right\">CLASS TEACHER</small>
+                                <b>{$t_u->getFullName()}</b>
+                            </div>
+                            <small class=\"show\">Phone: <a href=\"tel:{$t_u->getPhone()}\"> {$t_u->getPhone()} </a></small>
+                            {$start_chat_html}
+                        </div>
+                    </div>
+                </section>";
+        }
+    }
+
+
+
+?>
+
+<div class=""> 
+
+    <div class="text-muted text-center panel material-shadow ">
+        <div class="panel-body">
+            <h4 class="no-m">
+                <b>
+                    CLASS: <?php echo $class->getClassName() ?>
+                </b>
+            </h4>
+        </div>
+    </div> 
+
+    <?php echo $sub_profile_html ?>
+    
+</div>

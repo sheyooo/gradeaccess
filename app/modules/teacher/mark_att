@@ -1,0 +1,69 @@
+<section class="main-content">
+
+    <!-- content wrapper -->
+    <div class="content-wrap">
+
+        <!-- inner content wrapper -->
+        <div class="wrapper">
+            <div class=" col-lg-8 col-lg-offset-2">
+                <section class="panel panel-default">
+                    <header class="panel-heading text-center">MARK THE DAY'S ATTENDANCE</header>
+                    <div class="panel-body no-p">
+
+                        <div class="table-responsive no-border">
+                            <table class="table table-hover table-striped">
+                                <thead>
+
+                                </thead>
+                                <tbody>
+                                <?php
+                                if($class_check){
+                                    if ($ids = $class->getStudentsID()) {
+                                        $i = 0;        
+                                        $html = null;                            
+                                
+                                        foreach ($ids as $id) {
+                                            $i++;
+                                            $stu = new Student($id);
+                                            $user_student = new User($id);
+
+                                            if($attendance = $stu->getAttendance(Tools::getCurrentDateAttendance())){
+                                                $att = "checked";
+                                            }else{
+                                                $att = "";
+                                            }
+
+                                            $html .= "<tr class=\"\">";
+                                            $html .= "<td class=\"lead\">{$i}</td>";
+                                            $html .= "<td class=\"lead\">{$user_student->getFullName()} </td>";
+                                            $html .= "<td>
+                                                        <div class=\"mr15\">
+                                                            <input name=\"{$user_student->getID()}\" 
+                                                            id=\"{$user_student->getID()}\" type=\"checkbox\" class=\"bSwitch\" {$att} />
+                                                        </div>
+                                                    </td>";
+                                            $html .= "</tr>";                                           
+                                        }
+
+                                        echo $html;
+                                    }else{
+                                        echo "<p class=\"text-center\"> NO STUDENTS IN THIS CLASS </p>";
+                                    }
+                                }else{
+                                    /*redirect to somewhere else*/
+                                }
+                                ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <!-- /inner content wrapper -->
+    </div>
+    <!-- /content wrapper -->
+    <?php include("includes/user/footer.inc"); ?>
+    <a class="exit-offscreen"></a>
+</section>
+

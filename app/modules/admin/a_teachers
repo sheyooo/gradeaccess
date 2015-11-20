@@ -1,0 +1,80 @@
+<section class="main-content">
+
+    <!-- content wrapper -->
+    <div class="content-wrap">
+
+        <!-- inner content wrapper -->
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-xs-12">
+                    <section class="panel panel-default">
+                        <header class="panel-heading">ALL TEACHERS</header>
+                        <div class="panel-body">
+
+                            <div class="table-responsive no-border">
+                                <table class="table table-hover table-bordered mg-t datatable">
+                                    <thead>
+                                    <tr>
+                                        <th>NAME</th>
+                                        <th>CLASS</th>
+                                        <th>PHONE</th>
+                                        <th>E-MAIL</th>
+                                        <th>SUBJECT</th>
+                                        <th>STATUS</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <?php
+                                    $conn = mysqli_connect("localhost", $db_user, $db_pass, $database) or die("error");
+                                    $command = "SELECT * FROM class_to_teacher
+                                                        RIGHT JOIN class
+                                                        ON (class_to_teacher.class_id= class.class_id)
+                                                        RIGHT JOIN teachers
+                                                        ON (class_to_teacher.teacher_id = teachers.teacher_id) ";
+
+                                    $result = mysqli_query($conn, $command) or die("fff");
+
+                                    while ($row = mysqli_fetch_array($result)) {
+                                        $row_accum = null;
+                                        if (empty($row['level'])) {
+                                            $class = "No Class Assigned";
+
+                                        } else {
+                                            $class = $row['level'];
+                                        }
+
+                                        if ($row['active'] == 1) {
+                                            $tr = "<tr class='success' >";
+                                            $active = "Active";
+                                        } else {
+                                            $tr = "<tr class='danger' >";
+                                            $active = "Deactivated";
+                                        };
+
+                                        $row_accum .= "{$tr}";
+                                        $row_accum .= "<td> {$row['last_name']} {$row['first_name']} </td>";
+                                        $row_accum .= "<td> {$class} {$row['arm']} </td> ";
+                                        $row_accum .= "<td> {$row['phone']} </td>";
+                                        $row_accum .= "<td> {$row['email']} </td>";
+                                        $row_accum .= "<td> {$row['subject']} </td>";
+                                        $row_accum .= "<td> {$active} </td>";
+
+                                        $row_accum .= "</tr>";
+                                        echo $row_accum;
+                                    }
+                                    ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <!-- /inner content wrapper -->
+    </div>
+    <!-- /content wrapper -->
+    <?php include("includes/admin/footer.inc"); ?>
+    <a class="exit-offscreen"></a>
+</section>
+

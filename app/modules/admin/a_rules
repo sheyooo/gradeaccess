@@ -1,0 +1,21 @@
+<section class="main-content">
+
+    <div class="content-wrap">
+        <div class="wrapper">
+            <div class="panel panel-default col-xs-12 no-p">
+                <div class="panel-heading">
+                    <h4 class="text-center">Edit the Rules and Regulations of the School</h4>
+                </div>
+                <div class="panel-body">
+                    <div name="content" class="" id="summernote">
+                        <?php echo $school->getRules(); ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <?php include("includes/user/footer.inc"); ?>
+
+    <a class="exit-offscreen"></a>
+</section>

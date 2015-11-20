@@ -1,0 +1,60 @@
+<section class="main-content">
+
+    <!-- content wrapper -->
+    <div class="content-wrap">
+
+        <!-- inner content wrapper -->
+        <div class="wrapper">
+            <div class=" col-lg-10 col-lg-offset-1">
+                <section class="panel panel-default">
+                    <header class="panel-heading">ADD STUDENTS TO YOUR CLASS</header>
+                    <div class="panel-body">
+
+                        <div class="table-responsive no-border">
+                            <table class="table table-bordered table-striped mg-t datatable editable-datatable">
+                                <thead>
+                                <tr>
+                                    <th>REG NO.</th>
+                                    <th>FIRST NAME</th>
+                                    <th>LAST NAME</th>
+                                    <th>GENDER</th>
+                                    <th>DATE OF BIRTH</th>
+                                    <th>EDIT</th>
+                                    <th>DELETE</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <?php
+                                $conn = mysqli_connect("localhost", $db_user, $db_pass, $database) or die("error");
+                                $result = mysqli_query($conn, "select * from students");
+
+                                while ($row = mysqli_fetch_array($result)) {
+                                    $row_accum = null;
+
+                                    $row_accum .= "<tr>";
+                                    $row_accum .= "<td> {$row['reg_no']} </td> ";
+                                    $row_accum .= "<td> {$row['first_name']} </td>";
+                                    $row_accum .= "<td> {$row['last_name']} </td>";
+                                    $row_accum .= "<td> {$row['sex']} </td>";
+                                    $row_accum .= "<td> {$row['dob']} </td>";
+                                    $row_accum .= "<td> <a href=\"javascript:;\" class=\"edit\">Edit</a> </td>";
+                                    $row_accum .= "<td> <a href=\"javascript:;\" class=\"delete\">Delete</a> </td>";
+
+                                    $row_accum .= "</tr>";
+                                    echo $row_accum;
+                                }
+                                ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <!-- /inner content wrapper -->
+    </div>
+    <!-- /content wrapper -->
+    <?php include("includes/user/footer.inc"); ?>
+    <a class="exit-offscreen"></a>
+</section>
+

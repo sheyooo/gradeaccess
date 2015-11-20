@@ -1,0 +1,7 @@
+.dash-tile {
+overflow: hidden;
+}
+
+.tile-bottom > small{
+white-space: normal;
+}

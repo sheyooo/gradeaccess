@@ -1,0 +1,86 @@
+<?php
+    $teacher = new Teacher($profile->getID());
+    if($class_check = $teacher->getClassID()){
+        $class = new SchoolClass($teacher->getClassID());
+    }
+    //print_r($students);
+    $sub_profile_html = "
+<div class=\"text-muted text-center panel material-shadow \">
+<div class=\"panel-body\">
+    <h4 class=\"no-m\">
+        No class assigned
+    </h4>
+</div>
+</div> ";
+    
+
+
+    if($class_check){
+            $sub_profile_html = "<div class=\"text-muted text-center panel material-shadow \">
+            <div class=\"panel-body\">
+                <h4 class=\"no-m\">
+                    <b>
+                        CLASS: {$class->getClassName()}
+                    </b>
+                </h4>
+            </div>
+        </div>";
+    }
+
+    if($class_check){
+        $in_class_html = "";
+        if($user->getType() == "parent" AND $children = $parent->getStudentsID()){
+            $in_class = array_intersect_key($children, $class->getStudentsID());
+            if($in_class){                
+                foreach ($in_class as $id) {
+                    $s_u = new User($id);
+                    $in_class_html .= "<div class=\"h4 text-uppercase\">THIS IS {$s_u->getFirstName()}'s class</div>";
+
+                }
+                $in_class_html .= "";
+
+            }
+
+        }   
+            $count = 0;
+            if(is_array($class->getStudentsID())){
+                $count = count($class->getStudentsID());
+            }
+
+            $sub_profile_html .= "<div class=\"text-muted text-center panel material-shadow \">
+            <div class=\"panel-body\">
+                <h4 class=\"no-m\">
+                    <b>
+                        CLASS OF {$count} STUDENTS
+                    </b>
+                </h4>
+                {$in_class_html}
+            </div>
+            
+        </div>";
+    }
+
+    if($subject = new Subject($teacher->getSubjectID())){
+            $sub_profile_html .= "<div class=\"text-muted text-center panel material-shadow \">
+            <div class=\"panel-body\">
+                <h4 class=\"no-m text-uppercase\">
+                    <b>
+                        Subject teacher for {$subject->getName()}
+                    </b>
+                </h4>
+            </div>
+        </div>";
+    }
+        
+
+
+
+?>
+
+<div class=""> 
+
+     
+
+    <?php echo $sub_profile_html ?>
+    
+</div>

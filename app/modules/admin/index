@@ -1,0 +1,189 @@
+<?php
+if ($teachers = $school->getUnnauthorizedTeachersID()) {
+    $html_teachers = null;
+    foreach($teachers as $id){
+        $user_teacher = new User($id);
+        $html_teachers .= "<a class=\"btn btn-danger btn-block\" href=\"a_activate_staff.php\">
+        {$user_teacher->getFullName()}
+    </a>";
+}
+} else {
+    $html_teachers = "<a class=\"btn btn-success btn-block\" href=\"javascript:;\">All Teachers are activated</a>";
+}
+?>
+<section class="main-content">
+
+    <div class="content-wrap">
+        <div class="wrapper">
+            <div class="row">
+
+                <div class="col-md-6 col-lg-3">
+
+                    <a href="students.php" title="View all the students in the school">
+                    <section class="widget bg-success material-shadow" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="View all the students in the school">
+                        <div class="row equal-blocks no-m">
+                            <div class="col-xs-6 block">
+                                <div class="text-center">
+                                    <i class="fa fa-graduation-cap fa-5x"></i>
+                                    <h6 class="text-uppercase">Number of students</h6>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 block bg-success brtr brbr p25">
+                                <div class="arrow left"></div>
+                                <div class="widget-body">
+                                    <h1 class="mt0 text-center show count" data-from="0" data-to="<?php echo $school->countStudents(); ?>"><?php echo $school->countStudents(); ?></h1>
+
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    </a>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+
+                <a href="a_activate_staff.php">
+                    <section class="widget bg-primary material-shadow" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="View and manage all teachers">
+                        <div class="row equal-blocks no-m">
+                            <div class="col-xs-6 block">
+                                <div class="text-center">
+                                    <i class="ti-user fa-5x"></i>
+                                    <h6 class="text-uppercase">Number of teachers</h6>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 block bg-primary brtr brbr p25">
+                                <div class="arrow left"></div>
+                                <div class="widget-body">
+                                    <h1 class="mt0 text-center show count" data-from="0" data-to="<?php echo $school->countTeachers(); ?>"><?php echo $school->countTeachers(); ?></h1>
+
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    </a>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+
+                    <section class="widget bg-warning material-shadow" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Count of all parents registered under your school">
+                        <div class="row equal-blocks no-m">
+                            <div class="col-xs-6 block">
+                                <div class="text-center">
+                                    <i class="ti-mobile fa-5x"></i>
+                                    <h6 class="text-uppercase">Number of parents</h6>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 block bg-warning brtr brbr p25">
+                                <div class="arrow left"></div>
+                                <div class="widget-body">
+                                    <h1 class="mt0 text-center show count" data-from="0" data-to="<?php echo $school->countParents(); ?>"><?php echo $school->countParents(); ?></h1>
+
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+
+                    <section class="widget  bg-danger material-shadow"  data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Count of admin accounts in this school">
+                        <div class="row equal-blocks no-m">
+                            <div class="col-xs-6 block">
+                                <div class="text-center">
+                                    <i class="ti-desktop fa-5x"></i>
+                                    <h6 class="text-uppercase">Number of admins</h6>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 block bg-danger brtr brbr p25">
+                                <div class="arrow left"></div>
+                                <div class="widget-body">
+                                    <h1 class="mt0 text-center show count" data-from="0" data-to="<?php echo $school->countAdmins(); ?>"><?php echo $school->countAdmins(); ?></h1>
+
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>                
+
+            </div>
+
+            <div class="row">
+
+                <div class="col-xs-12 col-md-6 col-lg-4">
+                    <?php
+                    include(__DIR__ . "/../user/fragments/newsletter_tile.php");
+                    ?>
+                </div>
+
+
+                <div class="col-xs-12 col-md-6 col-lg-4">
+                    <?php 
+                    $present = $school->countPresent();
+                    $total = $school->countStudents();
+
+                    $present_percent = ($present / $total) * 100;
+
+
+                    ?>
+                    <a href="students.php">
+                    <div class="panel material-shadow"  data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Percentage of today's attendance">
+                        <div class="panel-heading text-center">
+                            Current attendance of the school
+                        </div>
+
+                        <div class="panel-body no-p">
+                            <div class="progress progress-lg no-m no-radius">
+                                <div class="progress-bar progress-bar-success done" 
+                                style="width: <?php echo $present_percent ?>%"><span class="sr-only"><?php echo $present_percent ?>% Complete (success)</span>
+                            </div>
+
+                            <div class="progress-bar progress-bar-danger done" 
+                            style="width: <?php echo 100 - $present_percent ?>%"><span class="sr-only"><?php echo 100 - $present_percent ?>% Complete (danger)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer text-center">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="small show text-uppercase text-muted"><?php echo $present ?> students present</div>
+                            <div class="h4 text-uppercase no-m"><?php echo $present_percent ?>% present</div>
+                        </div>
+                    </div>  
+                </div>
+                </a>
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <div id="chart-div" class="row visible-lg">
+        <div class="col-xs-12">
+            <div class="panel material-shadow"  data-toggle="tooltip" data-placement="top" title="" data-original-title="Statistical representation your school's performance. This is aggregated from all students performance">
+
+                <div class="panel-body">
+
+                    <div class="category chart" style="height: 400px"></div> 
+                </div>
+
+                <div class="panel-footer">
+                    <div class="row">
+                        <div class="col-xs-12 text-center">
+                            These are the most recent assessment tests and this is a combination of all students average<p class="visible-xs"> (Moblie: View in landscape) Set your phone to rotate</p>
+                        </div>
+                    </div>              
+                </div>
+            </div>     
+
+        </div>
+    </div>
+
+
+</div>
+</div>
+
+<?php include("includes/user/footer.inc"); ?>
+
+<a class="exit-offscreen"></a>
+</section>

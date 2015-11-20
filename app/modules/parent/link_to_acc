@@ -1,0 +1,69 @@
+<section class="main-content">
+
+    <!-- content wrapper -->
+    <div class="content-wrap">
+
+        <!-- inner content wrapper -->
+        <div class="wrapper">
+            <div class=" col-lg-6 col-lg-offset-3">
+                <section class="panel panel-default">
+                    <header class="panel-heading">LINK A STUDENT TO THIS ACCOUNT</header>
+
+                    <div class="panel-body">
+                        <?php
+                        if ($suc = Tools::valueGet("success")) {
+                            switch ($suc) {
+                                case 1:
+                                    echo "<strong><p class=\"text-center\" style=\"color: #008000;\">Successfully linked, go to homepage.</p></strong>
+                                            <div class=\"block mb15 text-center\"><a href=\"index.php\" class=\"btn btn-warning text-center\">CLICK TO GO BACK TO HOME-PAGE</a></div>";
+                                    break;
+
+                                case 2:
+                                    echo "<strong><p style=\"color: red;\">Registration number not found!</p></strong>";
+                                    break;
+
+                                case 3:
+                                    echo "<strong><p style=\"color: red;\">Found match, but with different birthdays.</p></strong>";
+                                    break;
+
+                                default:
+                                    echo "<strong><p>There seems to be a problem.</p></strong>";
+                                    break;
+                            }
+                        };
+                        ?>
+                        <form role="form" class="parsley-form" action="process/forms/link_stud.php" method="get"
+                              data-parsley-validate>
+                            <div class="form-group">
+                                <label for="last_name">Surname</label>
+                                <input name="last_name" class="form-control" placeholder="Last name of your child" type="text"
+                                       data-parsley-required="true" data-parsley-trigger="change"
+                                        "/>
+
+                                <label for="reg">Registration Number</label>
+                                <input name="reg_no" class="form-control" placeholder="REGISTRATION NUMBER" type="text"
+                                       data-parsley-required="true" data-parsley-trigger="change"
+                                       data-parsley-type="digits" data-parsley-length="[6, 8]"/>
+
+                                <label for="birth_day">Birthday</label>
+                                <input name="birth_day" class="form-control datepicker" placeholder="BIRTHDAY"
+                                       type="text" data-parsley-required="true" data-parsley-trigger="change"/>
+                            </div>
+
+                            <div class="col-lg-6 no-p">
+                                <button class="form-control btn btn-primary btn-parsley">SUBMIT</button>
+                            </div>
+                            <div class="col-lg-6 no-p"><a class="form-control btn btn-warning">WHAT IS THIS?</a></div>
+
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <!-- /inner content wrapper -->
+    </div>
+    <!-- /content wrapper -->
+    <?php include("includes/user/footer.inc"); ?>
+    <a class="exit-offscreen"></a>
+</section>
+

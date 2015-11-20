@@ -1,0 +1,63 @@
+<?php
+
+$html = null;
+
+if ($chats = $user->getChats()) {
+
+    foreach ($chats as $message) {
+        $chat = new Chat($message);
+        $ch_message = $chat->getLastMessage();
+        //print_r($ch_message);
+
+        $ch_user = new User($ch_message['from_user_id']);
+        $time = strtotime($ch_message['time']);
+
+        $html .= "<div class=\"panel panel-default user-chats-messages \">
+                    <a href=\"message.php?chat_id={$ch_message['chat_id']}\">
+                    
+                        <div class=\"panel-body\">
+                            <div class=\"user-avatar col-lg-1 col-xs-4\">
+                                <img class=\"img-circle img-thumbnail\" src=\"img/faceless.jpg\" >
+                            </div>
+                            <div class=\"col-lg-11 col-xs-8\">  
+                                    <span class=\"\">
+                                        <small class=\"pull-right text-uppercase\" data-livestamp=\"{$time}\"></small>
+                                        <strong class=\"text-uppercase\"> {$ch_user->getFullname()} </strong>
+                                    </span>                              
+                                    <p class=\"text\"> {$ch_message['message']} </p>                                
+                            </div>
+                        </div>
+                        </a>
+                    
+                </div>";
+    }
+
+} else {
+    $html = "<div class=\"text-muted\">                
+                <h1 class=\"text-center\">
+                    <strong class=\"text-center text-uppercase\">No Chat Records</strong><br>
+                    <h1 class=\"text-center\"><i class=\"fa fa-inbox fa-4x\"></i></h1><br>           
+                </h1><br>
+                <p class=\"text-center\">Why don't you discuss with someone</p>
+                <p class=\"text-center\">To send a message use the chat panel to the right</p>
+
+            </div>";
+}
+
+?>
+
+<section class="main-content">
+    <!-- content wrapper -->
+    <div class="content-wrap">
+        <!-- inner content wrapper -->
+        <div class="wrapper">
+    
+        <?php echo $html; ?>
+
+        </div>
+<!-- /inner content wrapper -->
+    </div>
+<!-- /content wrapper -->
+<?php include("includes/parent/footer.inc"); ?>
+<a class="exit-offscreen"></a>
+</section>

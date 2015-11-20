@@ -1,0 +1,63 @@
+<section class="main-content">
+
+    <!-- content wrapper -->
+    <div class="content-wrap">
+
+        <!-- inner content wrapper -->
+        <div class="wrapper">
+            <div class=" col-lg-6 col-lg-offset-3">
+                <section class="panel panel-default">
+                    <header class="panel-heading">CHANGE YOUR ACCOUNT PASSWORD</header>
+
+                    <div class="panel-body">
+                        <?php
+                        if (Tools::valueGet("status")) {
+                            switch (Tools::valueGet("status")) {
+                                case 1:
+                                    echo "<p class=\"text-danger\">Your Current Password is not correct</p>";
+                                    break;
+
+                                case 2:
+                                    echo "<p class=\"text-success\">Successfully changed password </p>";
+                                    break;
+
+                                default:
+                                    echo "<p>There seems to be a problem.</p>";
+                                    break;
+                            }
+                        };
+                        ?>
+                        <form role="form" class="parsley-form" action="process/forms/process_ch_pass.php" method="post"
+                              data-parsley-validate>
+                            <div class="form-group">
+                                <label for="current_password">Current Password</label>
+                                <input name="current_password" class="form-control mb25" placeholder="Current Password" type="password"
+                                       data-parsley-required="true" data-parsley-trigger="change"
+                                       data-parsley-length="[6, 30]"/>
+
+                                <label for="new_password">New Password</label>
+                                <input name="new_password" id="new_pass" class="form-control" placeholder="Type in new password" type="password"
+                                       data-parsley-required="true" data-parsley-trigger="change"
+                                       data-parsley-length="[6, 30]"/>
+
+                                <label for="r_new_password">New Password</label>
+                                <input name="r_new_password" class="form-control" placeholder="Type in new password again" type="password"
+                                       data-parsley-required="true" data-parsley-trigger="change"
+                                       data-parsley-equalto="#new_pass" data-parsley-length="[6, 30]"/>
+                            </div>
+
+                            <div class="col-lg-12 no-p">
+                                <button class="form-control btn btn-primary btn-parsley">SUBMIT</button>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <!-- /inner content wrapper -->
+    </div>
+    <!-- /content wrapper -->
+    <?php include("includes/user/footer.inc"); ?>
+    <a class="exit-offscreen"></a>
+</section>
+

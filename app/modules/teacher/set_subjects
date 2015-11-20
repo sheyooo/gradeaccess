@@ -1,0 +1,76 @@
+<?php
+    if($class_check){
+        $ids = $class->getSubjectsID();
+        $state = "";
+    }else{
+        $state = "disabled=\"disabled\" ";
+    }
+    
+   
+
+    $avail_subj = App::getSubjects();
+    //print_r($ids);
+?>
+
+<!--suppress ALL -->
+<section class="main-content">
+
+    <!-- content wrapper -->
+    <div class="content-wrap">
+
+        <!-- inner content wrapper -->
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-xs-12 col-lg-offset-2 col-lg-8">
+                    <section class="panel pnel-default material-shadow">
+                        <header class="panel-heading text-center">ADD OR REMOVE SUBJECTS OFFERED IN YOUR CLASS</header>
+                        <div class="panel-body">
+                            <div class="table-responsive no-border">
+                                <form role="form" class="" method="post" action="process/forms/set_subjects.php">
+                                <table class="table mg-t">
+                                    <thead>
+                                    <tr>
+                                        <th class="">
+                                            <span class="text-left col-xs-8">AVAILABLE SUBJECTS</span>
+                                            <span class="col-xs-4 text-right"><input class="form-control btn btn-primary"<?php echo $state; ?> type="submit" value="Save!"></span>
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <?php
+                                        $html = "<p class=\"text-center\">No class assigned</p>";
+                                        if($class_check){
+                                            $html =  "";
+                                            foreach($avail_subj as $sub_id => $sub_fields) {
+                                                $check = null;
+
+                                                if(isset($ids[$sub_id])){
+                                                    $check = "checked";
+                                                } else{
+                                                    $check = "";
+                                                }
+
+                                                $html .= "<tr>";
+                                                $html .= "<td> <input {$check} class=\"icheck\" type=\"checkbox\" name=\"subjects[{$sub_id}]\"> {$sub_fields['name']} </td>";
+                                                $html .= "</tr>";
+                                            }
+                                        }
+                                        echo $html;
+                                    ?>
+                                    </tbody>
+                                </table>
+                                </form>
+                            </div>
+
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+        <!-- /inner content wrapper -->
+    </div>
+    <!-- /content wrapper -->
+    <?php include("includes/user/footer.inc"); ?>
+    <a class="exit-offscreen"></a>
+</section>
