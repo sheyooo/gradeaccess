@@ -18,7 +18,6 @@ function confirmation(){
                 Tools::redirect("forgot.php?stage=change&verification_code={$v}&error=1");
             }
         }else{
-            
             Tools::redirect("forgot.php?stage=confirmation&error=1");
         }
 
@@ -39,10 +38,20 @@ function confirmation(){
                 Tools::redirect("forgot.php?stage=sms&error=1");
             }
 
-        }elseif(Tools::valueGet("email")){
+        }elseif($e = Tools::valueGet("email")){
+            if($id = App::findEmail($e)){
+                $user = new User($id);
+                $_SESSION['changer_id'] = $id;
+                
+                if($code = $user->initiatePasswordReset()){
+                    /*then send sms with code in it*/
+                }
 
+            }else{
+                Tools::redirect("forgot.php?stage=email&error=1");
+            }
         }
-        }
+    }
 }
 
 

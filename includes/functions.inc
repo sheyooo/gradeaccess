@@ -3,7 +3,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', TRUE);
 ini_set('display_startup_errors', TRUE);
 date_default_timezone_set('Africa/Lagos');
-$base_url = "http://localhost/gradeaccessOOP/";
+$base_url = "http://localhost:9000/";
 
 
 require_once __DIR__ . '/../vendor/autoload.php';

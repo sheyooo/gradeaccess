@@ -40,6 +40,7 @@
 			$result = $conn->execObject($command);
 
 			if(mysqli_num_rows($result)){
+				$row = mysqli_fetch_assoc($result);
 				return $row['user_id'];
 			}else{
 				return false;
@@ -102,16 +103,16 @@
 			$command = "SELECT * FROM subjects";
 			$result = $conn->execObject($command);
 
-			if(mysqli_num_rows($result)){
-				$subjects = null;
+			// if(mysqli_num_rows($result)){
+				$subjects = [];
 
 				while($row = mysqli_fetch_assoc($result)){
 					$subjects[$row['subject_id']] = $row;
 				}
 				return $subjects;
-			}else{
-				return false;
-			}
+			// }else{
+			// 	return false;
+			// }
 		}
 
 		public static function generateConfirmationCode(){
@@ -133,14 +134,5 @@
 
 			return $insert_id;
 		}
-
-
-
-
-
 	}
-
-
-
-
 ?>

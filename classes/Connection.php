@@ -7,7 +7,7 @@ class Connection{
 	private static $db_host = "127.0.0.1";
 	private static $db_user = "root";
 	private static $db_pass = "";
-	private static $database = "school";
+	private static $database = "gaccess";
 
 
 

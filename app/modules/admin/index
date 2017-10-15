@@ -120,10 +120,11 @@ if ($teachers = $school->getUnnauthorizedTeachersID()) {
                     <?php 
                     $present = $school->countPresent();
                     $total = $school->countStudents();
-
-                    $present_percent = ($present / $total) * 100;
-
-
+                    if ($total > 0) {
+                        $present_percent = ($present / $total) * 100;
+                    } else {
+                        $present_percent = 0;
+                    }
                     ?>
                     <a href="students.php">
                     <div class="panel material-shadow"  data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Percentage of today's attendance">

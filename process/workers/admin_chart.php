@@ -22,8 +22,10 @@ if($chart = $school->getOverallPerformance($y, $t)){
     $bar_array .= "]";
 
     echo $bar_array;
+} else {
+    echo(json_encode([]));
 }
 
-//echo(json_encode([["Maths", 10], ["English", 93], ["Physics", 4], ["Biology", 100], ["Chemistry", 17]]))
+// echo(json_encode('[["Maths", 10], ["English", 93], ["Physics", 4], ["Biology", 100], ["Chemistry", 17]]'))
 
 ?>

@@ -39,14 +39,8 @@ if ($news_id = $news->getPreviousId($school->getId())) {
 if( $user->getType() == "parent"){
     include("app/parent/news_letter.php");
 }elseif($user->getType() == "admin"){
-    $delete_link = "process/workers/del_news.php?guid={$del}";    
+    $delete_link = "process/workers/del_news.php?guid={$del}";
     include("app/admin/news_letter.php");
 }
-
-
-
-
-
-
 
 ?>

@@ -6,7 +6,7 @@ class Tools {
 	public static function signin($username, $password){
 		$conn = Connection::getInstance("read");
 
-        $command = "SELECT user_id, first_name, last_name, username, password, school_id
+        $command = "SELECT user_id, first_name, last_name, username, password, school_id, type
                         FROM users
                         WHERE username = '{$username}'
                         OR email = '{$username}' ";
@@ -18,7 +18,7 @@ class Tools {
 
             if( password_verify($password, $row['password'] )){
             	$_SESSION['signed_in'] = 1;
-                $_SESSION['subdomain'] = $subdomain;
+                // $_SESSION['subdomain'] = $subdomain;
                 $_SESSION['school_id'] = $row['school_id'];
                 $_SESSION['id'] = $row['user_id'];
                 $_SESSION['type'] = $row['type'];
@@ -109,7 +109,6 @@ class Tools {
 	}
 
 	public static function redirect($url){
-
 		header("Location: {$url}");
 	}
 

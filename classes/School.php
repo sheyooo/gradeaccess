@@ -18,7 +18,6 @@ class School{
 			$row = mysqli_fetch_array($result);
 			$this->id = $id;
 			$this->fields_from_db = $row;
-
 		} else{
 			return false;
 		}
@@ -33,7 +32,6 @@ class School{
 	}
 
 	public function getID(){
-
 		return $this->id;
 	}
 
@@ -63,7 +61,7 @@ class School{
 
 			return $row['count'];
 		}else{
-			return false;
+			return 0;
 		}
 	}
 
@@ -78,7 +76,7 @@ class School{
 
 			return $row['count'];
 		}else{
-			return false;
+			return 0;
 		}
 	}
 
@@ -96,7 +94,7 @@ class School{
 
 			return $row['count'];
 		}else{
-			return false;
+			return 0;
 		}
 	}
 
@@ -111,7 +109,7 @@ class School{
 
 			return $row['count'];
 		}else{
-			return false;
+			return 0;
 		}
 	}
 
@@ -127,7 +125,7 @@ class School{
 
 			return $row['count'];
 		}else{
-			return false;
+			return 0;
 		}
 	}
 
@@ -143,7 +141,7 @@ class School{
 
 			return $row['count'];
 		}else{
-			return false;
+			return 0;
 		}
 	}
 
@@ -162,7 +160,7 @@ class School{
 
 			return $row['count'];
 		}else{
-			return false;
+			return 0;
 		}
 	}
 
@@ -181,7 +179,7 @@ class School{
 
 			return $row['count'];
 		}else{
-			return false;
+			return 0;
 		}
 	}
 
@@ -190,21 +188,21 @@ class School{
 		$command = "SELECT scores.subject_id, short_name, AVG(score) AS avg
 		FROM scores
 		LEFT JOIN subjects 
-		ON (subjects.subject_id = scores.subject_id)						
+		ON (subjects.subject_id = scores.subject_id)
 		WHERE year = '{$y}'
 		AND term_id = {$t}
 		GROUP BY subject_id ";
 		$result = $conn->execObject($command);
-		if(mysqli_num_rows($result)){
-			$fields = null;
+		// if(mysqli_num_rows($result)){
+			$fields = [];
 			while($row = mysqli_fetch_assoc($result)){
 				$fields[] = $row;
 			}
 
-			return $fields;				
-		}else{
-			return false;
-		}
+			return $fields;
+		// }else{
+		// 	return false;
+		// }
 	}
 
 	public function getLastNewsId(){
@@ -218,7 +216,7 @@ class School{
 
 			return $row['news_id'];
 		}else{
-			return false;
+			return 0;
 		}
 	}
 
@@ -311,8 +309,6 @@ class School{
 		}else{
 			return false;
 		}
-
-
 	}
 
 	public function admin(){
@@ -398,15 +394,15 @@ class School{
 		ORDER BY sort";
 		$result = $conn->execObject($command);
 
-		if(mysqli_num_rows($result)){
-			$ids = null;
+		// if(mysqli_num_rows($result)){
+			$ids = [];
 			while($row = mysqli_fetch_assoc($result)){
 				$ids[$row['class_id']] = $row['class_id'];
 			}
 			return $ids;
-		}else{
-			return false;
-		}
+		// }else{
+		// 	return false;
+		// }
 	}
 
 	public function getAllSessions(){
@@ -414,18 +410,18 @@ class School{
 
 		$command = "SELECT DISTINCT year FROM assessment WHERE school_id = {$this->id}";
 		$result = $conn->execObject($command);
-		if(mysqli_num_rows($result)){
-			$sessions = null;
+		// if(mysqli_num_rows($result)){
+			$sessions = [];
 
 			while ($row_sessions = mysqli_fetch_assoc($result)) {
-				$sessions[] = $row_sessions['year'];				    
+				$sessions[] = $row_sessions['year'];
 			}
 
 			return $sessions;
 
-		} else{
-			return false;
-		}
+		// } else{
+		// 	return false;
+		// }
 	}
 
 	public function getAllTerms(){
@@ -433,17 +429,17 @@ class School{
 
 		$command = "SELECT * FROM terms";
 		$result = $conn->execObject($command);
-		if(mysqli_num_rows($result)){
-			$terms = null;
+		// if(mysqli_num_rows($result)){
+			$terms = [];
 
 			while ($row = mysqli_fetch_array($result)) {
 				$terms[$row['term_id']] = $row;
 			};
 			return $terms;
 
-		}else{
-			return false;
-		}	
+		// }else{
+		// 	return false;
+		// }	
 	}
 
 	public function getCurrentSession(){
@@ -501,15 +497,12 @@ class School{
 		$command = "SELECT * FROM teachers 
 		WHERE school_id = {$this->id}";
 		$result = $conn->execObject($command);
-		if(mysqli_num_rows($result)){
-			$ids = null;
-			while($row = mysqli_fetch_assoc($result)){
-				$ids[$row['teacher_id']] = $row['teacher_id'];
-			}
-			return $ids;
-		}else{
-			return false;
+
+		$ids = [];
+		while($row = mysqli_fetch_assoc($result)){
+			$ids[$row['teacher_id']] = $row['teacher_id'];
 		}
+		return $ids;
 	}
 
 	public function getAllStudentsID(){
@@ -519,15 +512,11 @@ class School{
 
 		$result = $conn->execObject($command);
 
-		if(mysqli_num_rows($result)){
-			$ids = null;
-			while ($row = mysqli_fetch_assoc($result)) {
-				$ids[$row['student_id']] = $row['student_id'];
-			}
-			return $ids;
-		}else{
-			return false;
+		$ids = [];
+		while ($row = mysqli_fetch_assoc($result)) {
+			$ids[$row['student_id']] = $row['student_id'];
 		}
+		return $ids;
 	}
 
 	public function getUnnauthorizedTeachersID(){
@@ -537,7 +526,7 @@ class School{
 		WHERE authorized = 0";
 		$result = $conn->execObject($command);
 
-		if(mysqli_num_rows($result)){
+		// if(mysqli_num_rows($result)){
 			$ids = null;
 
 			while($row = mysqli_fetch_assoc($result)){
@@ -545,9 +534,9 @@ class School{
 			}
 
 			return $ids;
-		}else{
-			return false;
-		}
+		// }else{
+		// 	return false;
+		// }
 	}
 
 	public function addTeacher($title, $fname, $lname, $email, $phone, $subject_id, $class_id){
@@ -604,10 +593,6 @@ class School{
 		}
 	}
 
-
-
-
-
 	public function findStudentByRegNo($reg){
 		$conn = Connection::getInstance("read");
 
@@ -627,21 +612,6 @@ class School{
 
 			//$this->getClassName($conn);
 	}
-
-
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
 
 ?>
