@@ -9,9 +9,14 @@ class Connection{
 	private static $db_pass = "";
 	private static $database = "gaccess";
 
-
-
 	public function __construct($host, $user, $pass, $db){
+		$url = parse_url("mysql://bbe53e29f980e3:1608bf0e@us-cdbr-iron-east-05.cleardb.net/heroku_08441ff45d5cf4e?reconnect=true");
+
+		$host = $url["host"];
+		$user = $url["user"];
+		$pass = $url["pass"];
+		$db = substr($url["path"], 1);
+		
 		//echo date_default_timezone_set('Africa/Lagos');
 		$conn = mysqli_connect($host, $user, $pass, $db) or die("error");
 		mysqli_query($conn , "SET time_zone = '+01:00' ")or die("SET TIMEZONE FAILED");
