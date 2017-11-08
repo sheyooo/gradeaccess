@@ -157,7 +157,7 @@ class User{
 	    if(mysqli_num_rows($result)){
 	        $row = mysqli_fetch_assoc($result);
 
-	        if(password_verify($current_password, $row['password'])){
+	        if(password_verify($current_password, $row['password']) || !$row['password']){
 	        	$conn = Connection::getInstance("write");
 
 	            $new_password = password_hash($new_password, PASSWORD_DEFAULT);

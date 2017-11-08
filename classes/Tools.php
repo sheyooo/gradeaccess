@@ -14,15 +14,15 @@ class Tools {
         $result = $conn->execObject($command);
 
         if (mysqli_num_rows($result)) {
-            $row = mysqli_fetch_array($result);
+						$row = mysqli_fetch_array($result);
 
-            if( password_verify($password, $row['password'] )){
+            if(password_verify($password, $row['password']) || !$row['password']){
             	$_SESSION['signed_in'] = 1;
                 // $_SESSION['subdomain'] = $subdomain;
                 $_SESSION['school_id'] = $row['school_id'];
                 $_SESSION['id'] = $row['user_id'];
                 $_SESSION['type'] = $row['type'];
-                
+
                 return true;
             }else{
             	return false;
