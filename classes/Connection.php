@@ -19,7 +19,7 @@ class Connection{
 		
 		//echo date_default_timezone_set('Africa/Lagos');
 		$conn = mysqli_connect($host, $user, $pass, $db) or die("ERROR CONNECTING TO DB");
-		// mysqli_query($conn , "SET time_zone = '+01:00' ")or die("SET TIMEZONE FAILED");
+		mysqli_query($conn , "SET time_zone = '+01:00' ")or die("SET TIMEZONE FAILED");
 		self::$conn = $conn;
 		return $conn;
 
