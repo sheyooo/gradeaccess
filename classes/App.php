@@ -17,8 +17,12 @@
 		public static function findSubdomain($subdomain){
 			$conn = Connection::getInstance("read");
 
+			// Let school name stand for token for now
+			// $command = "SELECT * FROM school 
+			// 			WHERE subdomain = '{$subdomain}'";
+
 			$command = "SELECT * FROM school 
-						WHERE subdomain = '{$subdomain}'";
+						WHERE sch_name = '{$subdomain}'";
 
 			$result = $conn->execObject($command);
 
