@@ -110,7 +110,7 @@ class ParentClass extends User{
 		$conn = Connection::getInstance("read");
 
 		$command = "SELECT student_id FROM parents
-					LEFT JOIN parent_to_student
+					RIGHT JOIN parent_to_student
 					ON (parents.parent_id = parent_to_student.parent_id)
 					WHERE parents.parent_id = {$this->id}";
 
@@ -133,13 +133,6 @@ class ParentClass extends User{
 		$command = "INSERT INTO parents (parent_id) VALUES({$id})";
 		$student = $conn->execInsert($command);
 	}
-
-
-
-
-
-	
-
 }
 
 ?>

@@ -12,42 +12,38 @@
 </div>
 </div> ";
 
-    if($parents){
+    if($teachers){
         $sub_profile_html = "";
-    
 
-    foreach ($teachers as $id) {
-        $t = new Teacher($id);
-        $t_u = new User($id);
+        foreach ($teachers as $id) {
+            $t = new Teacher($id);
+            $t_u = new User($id);
 
-        $start_chat_html = "";
-        if($id != $user->getID()){
-            $start_chat_html = "<small class=\"show\"><a href=\"message.php?user={$t_u->getID()}\">Discuss with {$t_u->getFirstNameWithTitle()}</a></small>";
-        }
-        
+            $start_chat_html = "";
+            if($id != $user->getID()){
+                $start_chat_html = "<small class=\"show\"><a href=\"message.php?user={$t_u->getID()}\">Discuss with {$t_u->getFirstNameWithTitle()}</a></small>";
+            }
+            
 
-        $sub_profile_html .= "
-        <section class=\"widget bg-primary material-shadow \" data-original-title=\"Tooltip on right\" data-toggle=\"tooltip\">
-                    <div class=\"widget-body\">
-                        <a href=\"profile.php?guid={$id}\" class=\"pull-left mr15\">
-                            <img src=\"{$t_u->getProfilePictureURL()}\" class=\"avatar avatar-md img-circle\" alt=\"\">
-                        </a>
+            $sub_profile_html .= "
+            <section class=\"widget bg-primary material-shadow \" data-original-title=\"Tooltip on right\" data-toggle=\"tooltip\">
+                        <div class=\"widget-body\">
+                            <a href=\"profile.php?guid={$id}\" class=\"pull-left mr15\">
+                                <img src=\"{$t_u->getProfilePictureURL()}\" class=\"avatar avatar-md img-circle\" alt=\"\">
+                            </a>
 
-                        <div class=\"overflow-hidden\">
-                            <div>
-                                <small class=\"pull-right\">CLASS TEACHER</small>
-                                <b>{$t_u->getFullName()}</b>
+                            <div class=\"overflow-hidden\">
+                                <div>
+                                    <small class=\"pull-right\">CLASS TEACHER</small>
+                                    <b>{$t_u->getFullName()}</b>
+                                </div>
+                                <small class=\"show\">Phone: <a href=\"tel:{$t_u->getPhone()}\"> {$t_u->getPhone()} </a></small>
+                                {$start_chat_html}
                             </div>
-                            <small class=\"show\">Phone: <a href=\"tel:{$t_u->getPhone()}\"> {$t_u->getPhone()} </a></small>
-                            {$start_chat_html}
                         </div>
-                    </div>
-                </section>";
+                    </section>";
+            }
         }
-    }
-
-
-
 ?>
 
 <div class=""> 

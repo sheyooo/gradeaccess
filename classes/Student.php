@@ -302,14 +302,16 @@ class Student extends User{
 
 	public function getAge(){
 		$birthDate = $this->dob;
-    	//explode the date to get month, day and year
-        $birthDate = explode("-", $birthDate);
-    	//get age from date or birthdate
+    //explode the date to get month, day and year
+    $birthDate = explode("-", $birthDate);
+		//get age from date or birthdate
+		
+		// echo($this->dob);
 
-        $age = (date("md", date("U", mktime(0, 0, 0, $birthDate[0], $birthDate[1], $birthDate[2]))) > date("md")
-            ? ((date("Y") - $birthDate[0]) - 1)
-            : (date("Y") - $birthDate[0]));
-        return $age . " Years Old"; 
+		$age = (date("md", date("U", time())) > date("md")
+				? ((date("Y") - $birthDate[0]) - 1)
+				: (date("Y") - $birthDate[0]));
+		return $age . " Years Old"; 
 	}
 
 	public function getSchoolId(){

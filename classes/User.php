@@ -301,6 +301,7 @@ class User{
 
 	public function getLastMessage(){
 		$conn = Connection::getInstance("read");
+		$latest_message = '';
 
 		if($chats = $this->getChatsID()){
 			$max = 0;

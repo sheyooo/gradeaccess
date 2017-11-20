@@ -17,7 +17,7 @@ new Session();
 
 if(! Tools::isUserLogged()){
     session_destroy();
-    Tools::redirect($base_url . "signin.php");
+    return Tools::redirect($base_url . "signin.php");
 }
 
 
